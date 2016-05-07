@@ -48,12 +48,14 @@
 	            			</li>
 	            			<li>
 	                        	<a href="masterizinview.htm" title="Master Izin">Master Izin</a>
+	                        	<a href="#" title="Master Izin">Master Izin</a>
 	            			</li>
 	            			<li>
 	                        	<a href="#" title="Master Profil">Master Profil</a>
 	            			</li>
 	            			<li class="last">
 	                        	<a href="masterkbliview.htm" title="Master KBLI">Master KBLI</a>
+	                        	<a href="#" title="Master KBLI">Master KBLI</a>
 	            			</li>
 	            		</ul>
 	                </li>
@@ -128,10 +130,17 @@
 			            <a href="" title="Privasi Pengguna" class="current" >Privasi Pengguna</a>
 			            <ul>
 			        		<li>
+<<<<<<< HEAD
 			                	<a href="#" title="Privasi">Privasi</a>
 			            	</li>
 			            	<li>
 			                	<a href="#" title="Pengguna">Pengguna</a>
+=======
+			                	<a href="privasiview.htm" title="Privasi">Privasi</a>
+			            	</li>
+			            	<li>
+			                	<a href="penggunaview.htm" title="Pengguna">Pengguna</a>
+>>>>>>> 58527faffeac3fa1ad035501f7f82029ae87f8e7
 			            	</li>
 			            	<li class="last">
 			                	<a href="#" title="Profil Saya">Profil Saya</a>
@@ -155,4 +164,8 @@
         </div>
     </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 58527faffeac3fa1ad035501f7f82029ae87f8e7

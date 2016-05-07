@@ -51,7 +51,7 @@
       <put-attribute name="title" value="Mahasiswa Edit"/>
       <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaedit.jsp"/>
   </definition>
-
+  
   <definition name="masterizinview" extends="baselayout">
       <put-attribute name="title" value="Master Izin"/>
       <put-attribute name="body" value="/WEB-INF/jsp/masterizinview.jsp"/>
@@ -80,6 +80,31 @@
   <definition name="coba" extends="baselayout">
   	  <put-attribute name="title" value="Coba"/>
       <put-attribute name="body" value="/WEB-INF/jsp/coba.jsp"/>
+	</definition>
+  <definition name="privasiview" extends="baselayout">
+      <put-attribute name="title" value="Data Privasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiview.jsp"/>
+  </definition>
+  <definition name="privasiadd" extends="baselayout">
+      <put-attribute name="title" value="Buat Privasi Baru"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiadd.jsp"/>
+  </definition>
+  <definition name="privasiedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Privasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiedit.jsp"/>
+  </definition>
+
+<definition name="penggunaview" extends="baselayout">
+      <put-attribute name="title" value="Data Pengguna"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaview.jsp"/>
+  </definition>
+  <definition name="penggunaadd" extends="baselayout">
+      <put-attribute name="title" value="Buat Pengguna Baru"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaadd.jsp"/>
+  </definition>
+  <definition name="penggunaedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Pengguna"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaedit.jsp"/>
   </definition>
 
 </tiles-definitions>

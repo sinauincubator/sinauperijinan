@@ -39,6 +39,20 @@ public interface PerizinanPathMappingConstants {
 	// Laporan Pages
 
 	// Privasi Pengguna Pages
+	
+	String PRIVASI_PENGGUNA_PRIVASI_VIEW_REQUEST_MAPPING = "privasiview.htm";
+	String PRIVASI_PENGGUNA_PRIVASI_VIEW_JSP_PAGE = "privasiview";
+	String PRIVASI_PENGGUNA_PRIVASI_ADD_REQUEST_MAPPING = "privasiadd.htm";
+	String PRIVASI_PENGGUNA_PRIVASI_ADD_JSP_PAGE = "privasiadd";
+	String PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING = "privasiedit.htm";
+	String PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE = "privasiedit";
+
+	String PRIVASI_PENGGUNA_PENGGUNA_VIEW_REQUEST_MAPPING = "penggunaview.htm";
+	String PRIVASI_PENGGUNA_PENGGUNA_VIEW_JSP_PAGE = "penggunaview";
+	String PRIVASI_PENGGUNA_PENGGUNA_ADD_REQUEST_MAPPING = "penggunaadd.htm";
+	String PRIVASI_PENGGUNA_PENGGUNA_ADD_JSP_PAGE = "penggunaadd";
+	String PRIVASI_PENGGUNA_PENGGUNA_EDIT_REQUEST_MAPPING = "penggunaedit.htm";
+	String PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE = "penggunaedit";
 
 	// Logout Pages
 
