@@ -1,0 +1,32 @@
+body {
+	background:#66CC99;
+	color:#000000;
+	font:12px/18px Tahoma, Arial, Helvetica;
+}
+#form {
+	width:600px;
+	height:auto;
+	background: rgba(200, 350, 200, 0.5);
+	padding-top:10px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom:3px dashed;
+	margin-top:80px;
+}
+input {
+	border-radius: 8px;
+	box-shadow: 0 0 8px rgba(255,255,255,0.8);
+	padding: 8px;
+	font: normal 12px Trebuchet MS;
+	color: #1e1e1f;
+	background: rgba(255,255,255,0.5);
+}
+#footer {
+	width:600px;
+	height:30px;
+	background: rgba(200, 350, 200, 0.5);
+	padding-top:10px;
+	margin-top:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}

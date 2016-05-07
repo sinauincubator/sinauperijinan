@@ -10,46 +10,72 @@
       <put-attribute name="title" value="Template"/>
       <put-attribute name="body" value="/WEB-INF/tiles/body.jsp"/>
   </definition>
-  
+
   <definition name="welcome" extends="baselayout">
       <put-attribute name="title" value="Welcome"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp"/>
   </definition>
-  
+
   <definition name="notfound" extends="baselayout">
       <put-attribute name="title" value="404 Not Found"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/notfound.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/notfound.jsp"/>
   </definition>
 
   <definition name="about" extends="baselayout">
       <put-attribute name="title" value="About"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/about.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/about.jsp"/>
   </definition>
-  
+
   <definition name="pemohonview" extends="baselayout">
       <put-attribute name="title" value="Data Pemohon"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonview.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/pemohonview.jsp"/>
   </definition>
   <definition name="pemohonadd" extends="baselayout">
       <put-attribute name="title" value="Buat Pemohon Baru"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonadd.jsp"/>      
-  </definition>      
+      <put-attribute name="body" value="/WEB-INF/jsp/pemohonadd.jsp"/>
+  </definition>
   <definition name="pemohonedit" extends="baselayout">
       <put-attribute name="title" value="Ubah Data Pemohon"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonedit.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/pemohonedit.jsp"/>
   </definition>
 
   <definition name="mahasiswa" extends="baselayout">
       <put-attribute name="title" value="Mahasiswa"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswapage.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswapage.jsp"/>
   </definition>
   <definition name="mahasiswaadd" extends="baselayout">
       <put-attribute name="title" value="Mahasiswa Add"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaadd.jsp"/>      
-  </definition>      
+      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaadd.jsp"/>
+  </definition>
   <definition name="mahasiswaedit" extends="baselayout">
       <put-attribute name="title" value="Mahasiswa Edit"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaedit.jsp"/>      
+      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaedit.jsp"/>
   </definition>
-  
+
+  <definition name="privasiview" extends="baselayout">
+      <put-attribute name="title" value="Data Privasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiview.jsp"/>
+  </definition>
+  <definition name="privasiadd" extends="baselayout">
+      <put-attribute name="title" value="Buat Privasi Baru"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiadd.jsp"/>
+  </definition>
+  <definition name="privasiedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Privasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/privasiedit.jsp"/>
+  </definition>
+
+<definition name="penggunaview" extends="baselayout">
+      <put-attribute name="title" value="Data Pengguna"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaview.jsp"/>
+  </definition>
+  <definition name="penggunaadd" extends="baselayout">
+      <put-attribute name="title" value="Buat Pengguna Baru"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaadd.jsp"/>
+  </definition>
+  <definition name="penggunaedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Pengguna"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/penggunaedit.jsp"/>
+  </definition>
+
 </tiles-definitions>
