@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Coba Buat Form dengan CSS</title>
+<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<div align="center">
+<body>
+<div id="form">
+	<p align="center"> <font size="5"> Silahkan isi data identitas berikut </font></p><br />
+	<form method="post">
+	<table align="center">
+		<tr>
+			<td valign="top">  No. Identitas </td>
+			<td valign="top"> : </td>
+			<td> 
+				<table>
+					<tr>
+						<td> <input type="radio" name="id" checked="checked" /> KTP</td>
+					</tr>
+					<tr>
+						<td> <input type="radio" name="id" /> Kartu Mahasiswa </td>
+					</tr>
+					<tr>
+						<td> <input type="text" name="noid" placeholder="No. Identitas" required="Diisi dulu ya" /></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td> Nama </td>
+			<td> : </td>
+			<td>  <input type="text" name="nama" placeholder="Nama" required="Diisi dulu ya" /></td>
+		</tr>
+		<tr>
+			<td> Alamat </td>
+			<td> : </td>
+			<td>  <input type="text" name="alamat" placeholder="Alamat" required"Diisi dulu ya" /></td>
+		</tr>
+		<tr>
+			<td> No Telepon </td>
+			<td> : </td>
+			<td>  <input type="text" name="telp" placeholder="Nomor Telepon" required"Diisi dulu ya" /></td>
+		</tr>
+		<tr>
+			<td> Email </td>
+			<td> : </td>
+			<td>  <input type="text" name="email" placeholder="Email" required"Diisi dulu ya" /></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">  <input type="submit" value="Ok" style="width:70px;"/></td>
+		</tr>
+	</table>
+	</form>
+
+</div>
+<div id="footer"> Copyright &copy; nddiett
+
+</div>
+</body>
+</div>
+</html>
