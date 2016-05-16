@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><a href="masterkbliadd.htm">Daftar Izin Baru</a></h1>
+<h1><a href="masterkbliadd.htm">Daftar KBLI Baru</a></h1>
 
 <table style="border: 1px solid; width: 98%">
 	<thead style="background:#EBDEF0">
@@ -17,7 +17,7 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${masterkblis}" var="masterkbli">
-			<c:url var="editUrl" value="masterkbli.htm?id=${masterkbli.kbli}" />
+			<c:url var="editUrl" value="masterkbliedit.htm?id=${masterkbli.kbli}" />
 		<tr>
 			<td><c:out value="${masterkbli.kbli}" /></td>
 			<td><c:out value="${masterkbli.deskripsi}" /></td>

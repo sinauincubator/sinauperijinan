@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><a href="masterizinadd.htm">Daftar Izin Baru</a></h1>
+<h1><a href="masterizinadd.htm">Daftar izin baru</a></h1>
 
 <table style="border: 1px solid; width: 98%">
 	<thead style="background:#EBDEF0">
