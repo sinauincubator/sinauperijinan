@@ -39,7 +39,7 @@ public interface PerizinanPathMappingConstants {
 	// Laporan Pages
 
 	// Privasi Pengguna Pages
-	
+
 	String PRIVASI_PENGGUNA_PRIVASI_VIEW_REQUEST_MAPPING = "privasiview.htm";
 	String PRIVASI_PENGGUNA_PRIVASI_VIEW_JSP_PAGE = "privasiview";
 	String PRIVASI_PENGGUNA_PRIVASI_ADD_REQUEST_MAPPING = "privasiadd.htm";
