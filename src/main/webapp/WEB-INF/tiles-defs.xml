@@ -30,6 +30,7 @@
       <put-attribute name="title" value="Data Pemohon"/>
       <put-attribute name="body" value="/WEB-INF/jsp/pemohonview.jsp"/>
   </definition>
+
   <definition name="pemohonadd" extends="baselayout">
       <put-attribute name="title" value="Buat Pemohon Baru"/>
       <put-attribute name="body" value="/WEB-INF/jsp/pemohonadd.jsp"/>
@@ -51,7 +52,7 @@
       <put-attribute name="title" value="Mahasiswa Edit"/>
       <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaedit.jsp"/>
   </definition>
-  
+
   <definition name="masterizinview" extends="baselayout">
       <put-attribute name="title" value="Master Izin"/>
       <put-attribute name="body" value="/WEB-INF/jsp/masterizinview.jsp"/>
@@ -77,10 +78,12 @@
       <put-attribute name="title" value="Ubah Data KBLI"/>
       <put-attribute name="body" value="/WEB-INF/jsp/masterkbliedit.jsp"/>
   </definition>
+
   <definition name="coba" extends="baselayout">
   	  <put-attribute name="title" value="Coba"/>
       <put-attribute name="body" value="/WEB-INF/jsp/coba.jsp"/>
 	</definition>
+
   <definition name="privasiview" extends="baselayout">
       <put-attribute name="title" value="Data Privasi"/>
       <put-attribute name="body" value="/WEB-INF/jsp/privasiview.jsp"/>
