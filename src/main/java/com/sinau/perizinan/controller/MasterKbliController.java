@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.MasterIzin;
 import com.sinau.perizinan.domain.MasterKbli;
 
 @Controller
@@ -63,7 +62,7 @@ public class MasterKbliController {
 
 		List<MasterKbli> masterkblis = new ArrayList<MasterKbli>();
 
-    	model.addAttribute("masterIzinAttribute", masterkblis);
+    	model.addAttribute("masterkbliAttribute", masterkblis);
 
     	return PerizinanPathMappingConstants.MASTER_KBLI_EDIT_JSP_PAGE;
 	}
