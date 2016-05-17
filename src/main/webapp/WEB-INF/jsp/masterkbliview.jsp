@@ -11,13 +11,13 @@
 	<thead style="background:#EBDEF0">
 		<tr>
 			<th>KBLI</th>
-			<th>Deskripsi</th>>
+			<th>Deskripsi</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 	<c:forEach items="${masterkblis}" var="masterkbli">
-			<c:url var="editUrl" value="masterkbliedit.htm?id=${masterkbli.kbli}" />
+			<c:url var="editUrl" value="masterkbliedit.htm?kbli=${masterkbli.kbli}" />
 		<tr>
 			<td><c:out value="${masterkbli.kbli}" /></td>
 			<td><c:out value="${masterkbli.deskripsi}" /></td>

@@ -60,9 +60,7 @@ public class MasterKbliController {
     public String getEdit(@RequestParam(value="kbli", required=true) String kbli, Model model) {
     	logger.info("Received request to show edit page");
 
-		List<MasterKbli> masterkblis = new ArrayList<MasterKbli>();
-
-    	model.addAttribute("masterkbliAttribute", masterkblis);
+    	model.addAttribute("masterKbliAttribute", new MasterKbli());
 
     	return PerizinanPathMappingConstants.MASTER_KBLI_EDIT_JSP_PAGE;
 	}

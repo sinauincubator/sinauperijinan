@@ -9,8 +9,8 @@
 
 <h1>Edit Master KBLI</h1>
 
-<c:url var="saveUrl" value="masterkbliedit.htm?" />
-<form:form modelAttribute="masterkbliAttribute" method="POST" action="${saveUrl}">
+<c:url var="saveUrl" value="masterkbliedit.htm" />
+<form:form modelAttribute="masterKbliAttribute" method="POST" action="${saveUrl}">
 	<table style="width: 100%">
 		<tr>
 			<td width="10%"><form:label path="kbli">KBLI</form:label></td>
