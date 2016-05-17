@@ -70,9 +70,7 @@ public class PemohonController {
     public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to show edit page");
 
-		List<Pemohon> pemohons = new ArrayList<Pemohon>();
-
-    	model.addAttribute("pemohonAttribute", pemohons);
+    	model.addAttribute("pemohonAttribute", new Pemohon());
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_JSP_PAGE;
 	}
