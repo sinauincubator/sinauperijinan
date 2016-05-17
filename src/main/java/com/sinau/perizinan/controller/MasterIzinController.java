@@ -66,9 +66,7 @@ public class MasterIzinController {
     public String getEdit(@RequestParam(value="kodeIzin", required=true) String kodeIzin, Model model) {
     	logger.info("Received request to show edit page");
 
-		List<MasterIzin> masterizins = new ArrayList<MasterIzin>();
-
-    	model.addAttribute("masterIzinAttribute", masterizins);
+    	model.addAttribute("masterIzinAttribute", new MasterIzin());
 
     	return PerizinanPathMappingConstants.MASTER_IZIN_EDIT_JSP_PAGE;
 	}
