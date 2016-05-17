@@ -22,7 +22,7 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${masterizins}" var="masterizin">
-			<c:url var="editUrl" value="masterizin.htm?id=${masterizin.kodeIzin}" />
+			<c:url var="editUrl" value="masterizinedit.htm?kodeIzin=${masterizin.kodeIzin}" />
 		<tr>
 			<td><c:out value="${masterizin.kodeIzin}" /></td>
 			<td><c:out value="${masterizin.jenis}" /></td>
