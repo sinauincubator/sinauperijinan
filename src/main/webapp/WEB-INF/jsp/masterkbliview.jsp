@@ -11,7 +11,7 @@
 	<thead style="background:#EBDEF0">
 		<tr>
 			<th>KBLI</th>
-			<th>Deskripsi</th>>
+			<th>Deskripsi</th>
 			<th></th>
 		</tr>
 	</thead>
