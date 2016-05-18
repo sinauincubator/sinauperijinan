@@ -270,6 +270,9 @@
 				</script>
 			</td>
 		</tr>
+	</table>
+	<h4>Alamat</h4>
+	<table style="width: 100%">
 		<tr>
 			<td><form:label path="alamat">Alamat</form:label></td>
 			<td>:</td>
@@ -373,6 +376,387 @@
 			</td>
 		</tr>
 	</table>
+	<h2>Detail Perusahaan</h2>
+	<table style="width: 100%">
+		<tr>
+			<td><form:label path="namaUsaha">Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="namaUsaha" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "namaUsaha",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="jabatan">jabatan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="jabatan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "jabatan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="badanUsaha">Jenis Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="badanUsaha" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "badanUsaha",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="namaSingkat">Nama Singkat PT</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="namaSingkat" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "namaSingkat",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="alamatPerusahaan">Alamat Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="alamatPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "alamatPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="propinsiPerusahaan">Propinsi</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="propinsiPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "propinsiPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="kabupatenPerusahaan">Kabupaten</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="kabupatenPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "kabupatenPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="kecamatanPerusahaan">Kecamatan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="kecamatanPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "kecamatanPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="desaPerusahaan">Desa</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="desaPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "desaPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="lokasiPerusahaan">Lokasi Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="lokasiPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "lokasiPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="nomorTeleponPerusahaan">Nomor Telepon</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="nomorTeleponPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "nomorTeleponPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="nomorFax">Nomor Fax</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="nomorFax" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "nomorFax",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="statusTempatUsaha">Status Tempat Usaha</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="statusTempatUsaha" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "statusTempatUsaha",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="npwpPerusahaan">NPWP Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="npwpPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "npwpPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="jenisKegiatanPerusahaan">Jenis Kegiatan Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="jenisKegiatanPerusahaan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "jenisKegiatanPerusahaan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+	</table>
+	<h4>Legalitas Perusahaan</h4>
+	<table style="width: 100%">
+		<tr>
+			<td><form:label path="namaNotaris">Nama Notaris(hanya untuk PT dan selain Koperasi)</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="namaNotaris" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "namaNotaris",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="nomorAktaNotaris">Nomor Akta Notaris</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="nomorAktaNotaris" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "nomorAktaNotaris",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="alamatNotaris">Alamat Notaris</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="alamatNotaris" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "alamatNotaris",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="tanggalPengesahan">Tanggal Pengesahan Pihak Berwenang(hanya untuk PT dan selain Koperasi)</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="tanggalPengesahan" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "tanggalPengesahan",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="dataAktaPendiriUsaha">Data Akta Pendirian Usaha(hanya untuk PT)</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="dataAktaPendiriUsaha" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "dataAktaPendiriUsaha",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="izinLain">Izin lain yang dimiliki</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="izinLain" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "izinLain",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<td><form:label path="modalUsaha">Modal Perusahaan</form:label></td>
+			<td>:</td>
+			<td>
+				<form:input path="modalUsaha" cssStyle="width:75%"/>
+				<script type="text/javascript">
+				Spring.addDecoration(new Spring.ElementDecoration({
+					elementId : "modalUsaha",
+					widgetType : "dijit.form.ValidationTextBox",
+					widgetAttrs : {
+						trim : true,
+						required : true
+					}
+				}));
+				</script>
+			</td>
+		</tr>
+
+	</table>
 
 	<input id="submit" type="submit" value="Save" />
 	<script type="text/javascript">
@@ -383,6 +767,3 @@
 	</form:form>
 </body>
 </html>
-
-
-
