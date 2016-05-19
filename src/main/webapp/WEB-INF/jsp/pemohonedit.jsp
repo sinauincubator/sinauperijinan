@@ -754,6 +754,19 @@
 			</td>
 		</tr>
 	</table>
+	<h2>Detail Pengurus Perusahaan</h2>
+	<table style="border: 1px solid; width: 98%">
+	<thead style="background:#EBDEF0">
+		<tr>
+			<th>Nama</th>
+			<th>Jabatan</th>
+			<th>Jenis Kelamin</th>
+			<th>Phone No</th>
+			<th>Alamat</th>
+			<th></th>
+		</tr>
+	</thead>
+	</table>
 
 	<input id="submit" type="submit" value="Save" />
 	<script type="text/javascript">
