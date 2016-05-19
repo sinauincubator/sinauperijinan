@@ -52,6 +52,13 @@ public class Pemohon {
 	private String izinLain;
 	private String modalUsaha;
 
+	//detailpengurus
+	private String namaPengurus;
+	private String jabatanPengurus;
+	private String jenisKelaminPengurus;
+	private String nomorTeleponPengurus;
+	private String alamatPengurus;
+
 	//setter getter detail yang mendaftarkan
 	public String getNama() {
 		return nama;
@@ -335,5 +342,38 @@ public class Pemohon {
 	}
 	public void setModalUsaha(String modalUsaha) {
 		this.modalUsaha = modalUsaha;
+	}
+
+
+	//setter getter detail pengurus perusahaan
+	public String getNamaPengurus() {
+		return namaPengurus;
+	}
+	public void setNamaPengurus(String namaPengurus) {
+		this.namaPengurus = namaPengurus;
+	}
+	public String getJabatanPengurus() {
+		return jabatanPengurus;
+	}
+	public void setJabatanPengurus(String jabatanPengurus) {
+		this.jabatanPengurus = jabatanPengurus;
+	}
+	public String getJenisKelaminPengurus() {
+		return jenisKelaminPengurus;
+	}
+	public void setJenisKelaminPengurus(String jenisKelaminPengurus) {
+		this.jenisKelaminPengurus = jenisKelaminPengurus;
+	}
+	public String getNomorTeleponPengurus() {
+		return nomorTeleponPengurus;
+	}
+	public void setNomorTeleponPengurus(String nomorTeleponPengurus) {
+		this.nomorTeleponPengurus = nomorTeleponPengurus;
+	}
+	public String getAlamatPengurus() {
+		return alamatPengurus;
+	}
+	public void setAlamatPengurus(String alamatPengurus) {
+		this.alamatPengurus = alamatPengurus;
 	}
 }
