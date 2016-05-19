@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
+import com.sinau.perizinan.domain.MasterIzin;
 import com.sinau.perizinan.domain.Pemohon;
 import com.sinau.perizinan.domain.Privasi;
 
@@ -59,18 +60,16 @@ public class PrivasiController {
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
+    public String getEdit(@RequestParam(value="idPrivasi", required=true) String idPrivasi, Model model) {
     	logger.info("Received request to show edit page");
 
-		List<Privasi> privasis = new ArrayList<Privasi>();
-
-    	model.addAttribute("privasiAttribute", privasis);
+    	model.addAttribute("privasiAttribute", new Privasi());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") Pemohon pemohon, @RequestParam(value="id", required=true) String id, Model model) {
+    public String postEdit(@Valid @ModelAttribute("privasiAttribute") Privasi privasi, @RequestParam(value="idPrivasi", required=true) String idPrivasi, Model model) {
     	logger.info("Received request to update privasi");
 
 		List<Privasi> privasis = new ArrayList<Privasi>();

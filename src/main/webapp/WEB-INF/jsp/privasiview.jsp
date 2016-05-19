@@ -17,7 +17,7 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${privasis}" var="privasi">
-			<c:url var="editUrl" value="privasiedit.htm?id=${privasi.idPrivasi}" />
+			<c:url var="editUrl" value="privasiedit.htm?idPrivasi=${privasi.idPrivasi}" />
 		<tr>
 			<td><c:out value="${privasi.idPrivasi}" /></td>
 			<td><c:out value="${privasi.roleName}" /></td>

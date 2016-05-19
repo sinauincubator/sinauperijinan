@@ -19,7 +19,7 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${penggunas}" var="pengguna">
-			<c:url var="editUrl" value="penggunaedit.htm?id=${pengguna.idPengguna}" />
+			<c:url var="editUrl" value="penggunaedit.htm?idPengguna=${pengguna.idPengguna}" />
 		<tr>
 			<td><c:out value="${pengguna.idPengguna}" /></td>
 			<td><c:out value="${pengguna.namaLengkap}" /></td>

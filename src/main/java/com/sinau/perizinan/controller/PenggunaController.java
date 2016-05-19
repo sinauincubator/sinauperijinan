@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
+import com.sinau.perizinan.domain.MasterKbli;
 import com.sinau.perizinan.domain.Pengguna;
 
 @Controller
@@ -52,31 +53,25 @@ public class PenggunaController {
     public String postAdd(@Valid @ModelAttribute("penggunaAttribute") Pengguna pengguna, Model model) {
 		logger.info("Received request to add new pengguna");
 
-		List<Pengguna> penggunas = new ArrayList<Pengguna>();
-
-   		model.addAttribute("penggunas", penggunas);
+		model.addAttribute("penggunaAttribute", new Pengguna());
 
    		return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_ADD_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
+    public String getEdit(@RequestParam(value="idPengguna", required=true) String idPengguna, Model model) {
     	logger.info("Received request to show edit page");
 
-		List<Pengguna> penggunas = new ArrayList<Pengguna>();
-
-    	model.addAttribute("penggunaAttribute", penggunas);
+    	model.addAttribute("penggunaAttribute", new Pengguna());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("penggunaAttribute") Pengguna pengguna, @RequestParam(value="id", required=true) String id, Model model) {
+    public String postEdit(@Valid @ModelAttribute("penggunaAttribute") Pengguna pengguna, @RequestParam(value="idPengguna", required=true) String idPengguna, Model model) {
     	logger.info("Received request to update pengguna");
 
-		List<Pengguna> penggunas = new ArrayList<Pengguna>();
-
-    	model.addAttribute("penggunas", penggunas);
+    	model.addAttribute("penggunaAttribute", new Pengguna());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE;
 	}
