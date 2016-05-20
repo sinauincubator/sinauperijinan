@@ -36,6 +36,10 @@ public interface PerizinanPathMappingConstants {
 	String MASTER_PROFIL_EDIT_JSP_PAGE = "masterprofiledit";
 
 	// Perizinan Pages
+	String MASTER_KEPALABIDANG_VIEW_REQUEST_MAPPING = "kepalabidangview.htm";
+	String MASTER_KEPALABIDANG_VIEW_JSP_PAGE = "kepalabidangview";
+	String MASTER_KEPALABIDANG_EDIT_REQUEST_MAPPING = "kepalabidangedit.htm";
+	String MASTER_KEPALABIDANG_EDIT_JSP_PAGE = "kepalabidangedit";
 
 	// Pencetakan Pages
 

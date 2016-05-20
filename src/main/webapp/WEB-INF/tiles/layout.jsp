@@ -93,7 +93,7 @@
 			                        	<a href="#" title="Kepala Bagian">Kepala Bagian</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Kepala Bidang">Kepala Bidang</a>
+			                        	<a href="kepalabidangview.htm" title="Kepala Bidang">Kepala Bidang</a>
 			            			</li>
 			            			<li>
 			                        	<a href="#" title="Sekretariat">Sekretariat</a>

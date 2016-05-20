@@ -110,4 +110,14 @@
       <put-attribute name="body" value="/WEB-INF/jsp/masterprofiledit.jsp"/>
   </definition>
 
+<definition name="kepalabidangview" extends="baselayout">
+      <put-attribute name="title" value="Kepala Bidang"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabidangview.jsp"/>
+  </definition>
+  <definition name="kepalabidangedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Kepala Bidang"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabidangedit.jsp"/>
+  </definition>
+
+
 </tiles-definitions>
