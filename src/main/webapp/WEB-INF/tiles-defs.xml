@@ -119,5 +119,14 @@
       <put-attribute name="body" value="/WEB-INF/jsp/kepalabidangedit.jsp"/>
   </definition>
 
+  <definition name="sekretariatview" extends="baselayout">
+      <put-attribute name="title" value="Sekretariat"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/sekretariatview.jsp"/>
+  </definition>
+  <definition name="sekretariatedit" extends="baselayout">
+      <put-attribute name="title" value="Verifikasi Sekretariat"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/sekretariatedit.jsp"/>
+  </definition>
+
 
 </tiles-definitions>
