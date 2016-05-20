@@ -32,6 +32,9 @@ public interface PerizinanPathMappingConstants {
 	String MASTER_KBLI_EDIT_REQUEST_MAPPING = "masterkbliedit.htm";
 	String MASTER_KBLI_EDIT_JSP_PAGE = "masterkbliedit";
 
+	String MASTER_PROFIL_EDIT_REQUEST_MAPPING = "masterprofiledit.htm";
+	String MASTER_PROFIL_EDIT_JSP_PAGE = "masterprofiledit";
+
 	// Perizinan Pages
 
 	// Pencetakan Pages

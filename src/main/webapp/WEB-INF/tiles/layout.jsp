@@ -50,7 +50,7 @@
 	                        	<a href="masterizinview.htm" title="Master Izin">Master Izin</a>
 	            			</li>
 	            			<li>
-	                        	<a href="#" title="Master Profil">Master Profil</a>
+	                        	<a href="masterprofiledit.htm" title="Master Profil">Master Profil</a>
 	            			</li>
 	            			<li class="last">
 	                        	<a href="masterkbliview.htm" title="Master KBLI">Master KBLI</a>

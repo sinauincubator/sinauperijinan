@@ -79,11 +79,6 @@
       <put-attribute name="body" value="/WEB-INF/jsp/masterkbliedit.jsp"/>
   </definition>
 
-  <definition name="coba" extends="baselayout">
-  	  <put-attribute name="title" value="Coba"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/coba.jsp"/>
-	</definition>
-
   <definition name="privasiview" extends="baselayout">
       <put-attribute name="title" value="Data Privasi"/>
       <put-attribute name="body" value="/WEB-INF/jsp/privasiview.jsp"/>
@@ -108,6 +103,11 @@
   <definition name="penggunaedit" extends="baselayout">
       <put-attribute name="title" value="Ubah Data Pengguna"/>
       <put-attribute name="body" value="/WEB-INF/jsp/penggunaedit.jsp"/>
+  </definition>
+
+<definition name="masterprofiledit" extends="baselayout">
+      <put-attribute name="title" value="Master Profil"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/masterprofiledit.jsp"/>
   </definition>
 
 </tiles-definitions>
