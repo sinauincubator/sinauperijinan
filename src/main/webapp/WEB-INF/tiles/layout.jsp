@@ -81,7 +81,7 @@
 			                	<a href="" title="Proses Izin" >Proses Izin</a>
 			                    <ul>
 			        		    	<li>
-		                        		<a href="#" title="Administrasi">Administrasi</a>
+		                        		<a href="administrasiview.htm" title="Administrasi">Administrasi</a>
 			            			</li>
 			            			<li>
 			                        	<a href="#" title="Survey">Survey</a>

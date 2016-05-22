@@ -162,6 +162,16 @@
       <put-attribute name="title" value="Verifikasi Kepala Badan"/>
       <put-attribute name="body" value="/WEB-INF/jsp/kepalabadanedit.jsp"/>
   </definition>
+  
+   <definition name="administrasiview" extends="baselayout">
+      <put-attribute name="title" value="administrasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/administrasiview.jsp"/>
+  </definition>
+  <definition name="administrasiedit" extends="baselayout">
+      <put-attribute name="title" value="Verifikasi administrasi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/administrasiedit.jsp"/>
+  </definition>
+  
 
 </tiles-definitions>
 
