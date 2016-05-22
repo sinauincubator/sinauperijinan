@@ -257,7 +257,7 @@
 				}));
 				</script>
 			</td>
-		</tr
+		</tr>
 		<tr>
 			<td>
 			</td>
@@ -475,7 +475,6 @@
 			</td>
 		</tr>
 	</table>
-	</script>
 </form:form>
 </body>
 </html>
