@@ -128,5 +128,14 @@
       <put-attribute name="body" value="/WEB-INF/jsp/sekretariatedit.jsp"/>
   </definition>
 
+ <definition name="kepalabadanview" extends="baselayout">
+      <put-attribute name="title" value="Kepala Bidang"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabadanview.jsp"/>
+  </definition>
+  <definition name="kepalabadanedit" extends="baselayout">
+      <put-attribute name="title" value="Verifikasi Kepala Badan"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabadanedit.jsp"/>
+  </definition>
+
 
 </tiles-definitions>

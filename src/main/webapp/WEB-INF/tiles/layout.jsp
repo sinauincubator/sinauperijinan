@@ -99,7 +99,7 @@
 			                        	<a href="sekretariatview.htm" title="Sekretariat">Sekretariat</a>
 			            			</li>
 			            			<li class="last">
-			                        	<a href="#" title="Kepala Badan">Kepala Badan</a>
+			                        	<a href="kepalabadanview.htm" title="Kepala Badan">Kepala Badan</a>
 			            			</li>
 			            		</ul>
 	                		</li>
