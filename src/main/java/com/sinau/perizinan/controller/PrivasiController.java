@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.MasterIzin;
-import com.sinau.perizinan.domain.Pemohon;
 import com.sinau.perizinan.domain.Privasi;
 
 @Controller

@@ -41,6 +41,22 @@ public interface PerizinanPathMappingConstants {
 	String MASTER_KEPALABIDANG_EDIT_REQUEST_MAPPING = "kepalabidangedit.htm";
 	String MASTER_KEPALABIDANG_EDIT_JSP_PAGE = "kepalabidangedit";
 
+	String PERIZINAN_SURVEY_VIEW_REQUEST_MAPPING = "surveyview.htm";
+	String PERIZINAN_SURVEY_VIEW_JSP_PAGE = "surveyview";
+	String PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING = "surveyedit.htm";
+	String PERIZINAN_SURVEY_EDIT_JSP_PAGE = "surveyedit";
+
+	String PERIZINAN_KEPSEK_VIEW_REQUEST_MAPPING = "kepalaseksiview.htm";
+	String PERIZINAN_KEPSEK_VIEW_JSP_PAGE = "kepalaseksiview";
+	String PERIZINAN_KEPSEK_EDIT_REQUEST_MAPPING = "kepalaseksiedit.htm";
+	String PERIZINAN_KEPSEK_EDIT_JSP_PAGE = "kepalaseksiedit";
+
+	String PERIZINAN_KEPBAG_VIEW_REQUEST_MAPPING = "kepalabagianview.htm";
+	String PERIZINAN_KEPBAG_VIEW_JSP_PAGE = "kepalabagianview";
+	String PERIZINAN_KEPBAG_EDIT_REQUEST_MAPPING = "kepalabagianedit.htm";
+	String PERIZINAN_KEPBAG_EDIT_JSP_PAGE = "kepalabagianedit";
+
+
 	// Pencetakan Pages
 
 	// Laporan Pages

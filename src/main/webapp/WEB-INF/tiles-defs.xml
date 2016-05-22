@@ -119,5 +119,32 @@
       <put-attribute name="body" value="/WEB-INF/jsp/kepalabidangedit.jsp"/>
   </definition>
 
+  <definition name="surveyview" extends="baselayout">
+      <put-attribute name="title" value="Data Proses Izin Survey"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/surveyview.jsp"/>
+  </definition>
+  <definition name="surveyedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Proses Izin Survey"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/surveyedit.jsp"/>
+  </definition>
+
+  <definition name="kepalaseksiview" extends="baselayout">
+      <put-attribute name="title" value="Data Proses Izin Kepala Seksi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalaseksiview.jsp"/>
+  </definition>
+  <definition name="kepalaseksiedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Proses Izin Kepala Seksi"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalaseksiedit.jsp"/>
+  </definition>
+
+  <definition name="kepalabagianview" extends="baselayout">
+      <put-attribute name="title" value="Data Proses Izin Kepala Bagian"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabagianview.jsp"/>
+  </definition>
+  <definition name="kepalabagianedit" extends="baselayout">
+      <put-attribute name="title" value="Ubah Data Proses Izin Kepala Bagian"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/kepalabagianedit.jsp"/>
+  </definition>
+
 
 </tiles-definitions>
