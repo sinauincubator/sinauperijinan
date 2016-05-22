@@ -67,9 +67,9 @@ public interface PerizinanPathMappingConstants {
 	String MASTER_SEKRETARIAT_EDIT_JSP_PAGE = "sekretariatedit";
 	
 	String ADMINISTRASI_VIEW_REQUEST_MAPPING = "administrasiview.htm";
-	String ADMINISTRASI_VIEW_JSP_PAGE = "administrasiview.htm";
+	String ADMINISTRASI_VIEW_JSP_PAGE = "administrasiview";
 	String ADMINISTRASI_EDIT_REQUEST_MAPPING = "administrasiedit.htm";
-	String ADMINISTRASI_EDIT_JSP_PAGE = "administrasiedit.htm";
+	String ADMINISTRASI_EDIT_JSP_PAGE = "administrasiedit";
 	// Pencetakan Pages
 
 	// Laporan Pages
