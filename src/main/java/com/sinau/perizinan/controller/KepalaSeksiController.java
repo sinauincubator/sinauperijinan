@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.KepalaBidang;
+import com.sinau.perizinan.domain.KepalaSeksi;
 
 @Controller
 public class KepalaSeksiController {
 	protected static Logger logger = Logger.getLogger("controller");
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPSEK_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
-	public String getKepalaBidangs(Model model){
-		logger.info("Received request to show all kepalabidangs");
+	public String getKepalaSeksis(Model model){
+		logger.info("Received request to show all kepalaseksis");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
-		KepalaBidang kepalaBidang = new KepalaBidang();
-		kepalaBidang.setNoPermintaan("001");
-		kepalaBidang.setPemohon("Heru Santoso");
-		kepalaBidang.setNama("Sinau Academy");
-		kepalaBidang.setJenisKelamin("Laki-laki");
-		kepalaBidang.setNoKtp("123456789");
-		kepalaBidang.setTanggalTerima("20-05-2016");
-		kepalaBidang.setTelepon("087 xxx xxx xxx");
-		kepalaBidang.setJumlahIzinBelumVerifikasi("4");
-		kepalaBidang.setAlamat("Simprug");
-		kepalabidangs.add(kepalaBidang);
+		List<KepalaSeksi> kepalaseksis = new ArrayList<KepalaSeksi>();
+		KepalaSeksi kepalaSeksi = new KepalaSeksi();
+		kepalaSeksi.setNoPermintaan("001");
+		kepalaSeksi.setPemohon("Andita Mega Wahyudi");
+		kepalaSeksi.setNama("Andita");
+		kepalaSeksi.setJenisKelamin("Perempuan");
+		kepalaSeksi.setNoKtp("12345678910");
+		kepalaSeksi.setTanggalTerima("22-05-2016");
+		kepalaSeksi.setTelepon("0896 7546 3750");
+		kepalaSeksi.setJumlahIzinBelumVerifikasi("2");
+		kepalaSeksi.setAlamat("Cikarang");
+		kepalaseksis.add(kepalaSeksi);
 
-		model.addAttribute("kepalabidangs", kepalabidangs);
+		model.addAttribute("kepalaseksis", kepalaseksis);
 
 		return PerizinanPathMappingConstants.PERIZINAN_KEPSEK_VIEW_JSP_PAGE;
 
@@ -47,18 +47,18 @@ public class KepalaSeksiController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("kepalaBidangAttribute", new KepalaBidang());
+    	model.addAttribute("kepalaSeksiAttribute", new KepalaSeksi());
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPSEK_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPSEK_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBidang kepalaBidang, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
-    	logger.info("Received request to update Kepala Bidang");
+    public String postEdit(@Valid @ModelAttribute("kepalaSeksiAttribute") KepalaSeksi kepalaSeksi, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    	logger.info("Received request to update Kepala Seksi");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
+		List<KepalaSeksi> kepalaseksis = new ArrayList<KepalaSeksi>();
 
-    	model.addAttribute("kepalabidangs", kepalabidangs);
+    	model.addAttribute("kepalaseksis", kepalaseksis);
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPSEK_EDIT_JSP_PAGE;
 	}

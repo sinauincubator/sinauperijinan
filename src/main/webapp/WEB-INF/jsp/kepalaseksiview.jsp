@@ -19,21 +19,23 @@
 			<th>Tanggal Terima</th>
 			<th>Telepon</th>
 			<th>Jumlah Izin Belum Survey</th>
+			<th>Alamat</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${surveys}" var="survey">
-			<c:url var="editUrl" value="surveyedit.htm?noPermintaan=${survey.noPermintaan}" />
+	<c:forEach items="${kepalaseksis}" var="kepalaseksi">
+			<c:url var="editUrl" value="kepalaseksiedit.htm?noPermintaan=${kepalaseksi.noPermintaan}" />
 		<tr>
-			<td><c:out value="${survey.noPermintaan}" /></td>
-			<td><c:out value="${survey.pemohon}" /></td>
-			<td><c:out value="${survey.nama}" /></td>
-			<td><c:out value="${survey.jenisKelamin}" /></td>
-			<td><c:out value="${survey.noKTP}" /></td>
-			<td><c:out value="${survey.tglTerima}" /></td>
-			<td><c:out value="${survey.telepon}" /></td>
-			<td><c:out value="${survey.jmlIzinBelumSurvey}" /></td>
+			<td><c:out value="${kepalaseksi.noPermintaan}" /></td>
+			<td><c:out value="${kepalaseksi.pemohon}" /></td>
+			<td><c:out value="${kepalaseksi.nama}" /></td>
+			<td><c:out value="${kepalaseksi.jenisKelamin}" /></td>
+			<td><c:out value="${kepalaseksi.noKtp}" /></td>
+			<td><c:out value="${kepalaseksi.tanggalTerima}" /></td>
+			<td><c:out value="${kepalaseksi.telepon}" /></td>
+			<td><c:out value="${kepalaseksi.jumlahIzinBelumVerifikasi}" /></td>
+			<td><c:out value="${kepalaseksi.alamat}" /></td>
 
 			<td><a href="${editUrl}">Edit</a></td>
 		</tr>

@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.KepalaBidang;
+import com.sinau.perizinan.domain.KepalaBagian;
 
 @Controller
 public class KepalaBagianController {
 	protected static Logger logger = Logger.getLogger("controller");
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPBAG_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
-	public String getKepalaBidangs(Model model){
-		logger.info("Received request to show all kepalabidangs");
+	public String getKepalaBagians(Model model){
+		logger.info("Received request to show all kepalabagians");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
-		KepalaBidang kepalaBidang = new KepalaBidang();
-		kepalaBidang.setNoPermintaan("001");
-		kepalaBidang.setPemohon("Heru Santoso");
-		kepalaBidang.setNama("Sinau Academy");
-		kepalaBidang.setJenisKelamin("Laki-laki");
-		kepalaBidang.setNoKtp("123456789");
-		kepalaBidang.setTanggalTerima("20-05-2016");
-		kepalaBidang.setTelepon("087 xxx xxx xxx");
-		kepalaBidang.setJumlahIzinBelumVerifikasi("4");
-		kepalaBidang.setAlamat("Simprug");
-		kepalabidangs.add(kepalaBidang);
+		List<KepalaBagian> kepalabagians = new ArrayList<KepalaBagian>();
+		KepalaBagian kepalaBagian = new KepalaBagian();
+		kepalaBagian.setNoPermintaan("001");
+		kepalaBagian.setPemohon("Andita Mega Wahyudi");
+		kepalaBagian.setNama("Andita");
+		kepalaBagian.setJenisKelamin("Perempuan");
+		kepalaBagian.setNoKtp("12345678910");
+		kepalaBagian.setTanggalTerima("22-05-2016");
+		kepalaBagian.setTelepon("0896 7546 3750");
+		kepalaBagian.setJumlahIzinBelumVerifikasi("1");
+		kepalaBagian.setAlamat("Cikarang");
+		kepalabagians.add(kepalaBagian);
 
-		model.addAttribute("kepalabidangs", kepalabidangs);
+		model.addAttribute("kepalabagians", kepalabagians);
 
 		return PerizinanPathMappingConstants.PERIZINAN_KEPBAG_VIEW_JSP_PAGE;
 
@@ -47,18 +47,18 @@ public class KepalaBagianController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("kepalaBidangAttribute", new KepalaBidang());
+    	model.addAttribute("kepalaBagianAttribute", new KepalaBagian());
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPBAG_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPBAG_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBidang kepalaBidang, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
-    	logger.info("Received request to update Kepala Bidang");
+    public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBagian kepalaBagian, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    	logger.info("Received request to update Kepala Bagian");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
+		List<KepalaBagian> kepalabagians = new ArrayList<KepalaBagian>();
 
-    	model.addAttribute("kepalabidangs", kepalabidangs);
+    	model.addAttribute("kepalabagians", kepalabagians);
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPBAG_EDIT_JSP_PAGE;
 	}
