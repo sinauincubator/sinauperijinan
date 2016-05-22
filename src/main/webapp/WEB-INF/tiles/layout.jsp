@@ -96,10 +96,10 @@
 			                        	<a href="kepalabidangview.htm" title="Kepala Bidang">Kepala Bidang</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Sekretariat">Sekretariat</a>
+			                        	<a href="sekretariatview.htm" title="Sekretariat">Sekretariat</a>
 			            			</li>
 			            			<li class="last">
-			                        	<a href="#" title="Kepala Badan">Kepala Badan</a>
+			                        	<a href="kepalabadanview.htm" title="Kepala Badan">Kepala Badan</a>
 			            			</li>
 			            		</ul>
 	                		</li>
