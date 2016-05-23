@@ -5,20 +5,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Proses Izin Survey</h1>
+<h1>Survey</h1>
 
 <table style="border: 1px solid; width: 98%">
 	<thead style="background:#EBDEF0">
 		<tr>
-			<th>No</th>
-			<th>Nomor Permintaan</th>
+			<th>No Permintaan</th>
 			<th>Pemohon</th>
 			<th>Nama</th>
 			<th>Jenis Kelamin</th>
-			<th>Nomor KTP</th>
+			<th>No KTP</th>
 			<th>Tanggal Terima</th>
 			<th>Telepon</th>
 			<th>Jumlah Izin Belum Survey</th>
+			<th>Alamat</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -30,11 +30,11 @@
 			<td><c:out value="${survey.pemohon}" /></td>
 			<td><c:out value="${survey.nama}" /></td>
 			<td><c:out value="${survey.jenisKelamin}" /></td>
-			<td><c:out value="${survey.noKTP}" /></td>
-			<td><c:out value="${survey.tglTerima}" /></td>
+			<td><c:out value="${survey.noKtp}" /></td>
+			<td><c:out value="${survey.tanggalTerima}" /></td>
 			<td><c:out value="${survey.telepon}" /></td>
-			<td><c:out value="${survey.jmlIzinBelumSurvey}" /></td>
-
+			<td><c:out value="${survey.jumlahIzinBelumVerifikasi}" /></td>
+			<td><c:out value="${survey.alamat}" /></td>
 			<td><a href="${editUrl}">Edit</a></td>
 		</tr>
 	</c:forEach>

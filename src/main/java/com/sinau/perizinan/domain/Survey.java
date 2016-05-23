@@ -5,11 +5,11 @@ public class Survey {
 	private String pemohon;
 	private String nama;
 	private String jenisKelamin;
-	private String noKTP;
-	private String tglTerima;
+	private String noKtp;
+	private String tanggalTerima;
 	private String telepon;
-	private String jmlIzinBelumSurvey;
-
+	private String jumlahIzinBelumVerifikasi;
+	private String alamat;
 	public String getNoPermintaan() {
 		return noPermintaan;
 	}
@@ -34,17 +34,17 @@ public class Survey {
 	public void setJenisKelamin(String jenisKelamin) {
 		this.jenisKelamin = jenisKelamin;
 	}
-	public String getNoKTP() {
-		return noKTP;
+	public String getNoKtp() {
+		return noKtp;
 	}
-	public void setNoKTP(String noKTP) {
-		this.noKTP = noKTP;
+	public void setNoKtp(String noKtp) {
+		this.noKtp = noKtp;
 	}
-	public String getTglTerima() {
-		return tglTerima;
+	public String getTanggalTerima() {
+		return tanggalTerima;
 	}
-	public void setTglTerima(String tglTerima) {
-		this.tglTerima = tglTerima;
+	public void setTanggalTerima(String tanggalTerima) {
+		this.tanggalTerima = tanggalTerima;
 	}
 	public String getTelepon() {
 		return telepon;
@@ -52,14 +52,18 @@ public class Survey {
 	public void setTelepon(String telepon) {
 		this.telepon = telepon;
 	}
-	public String getJmlIzinBelumSurvey() {
-		return jmlIzinBelumSurvey;
+	public String getJumlahIzinBelumVerifikasi() {
+		return jumlahIzinBelumVerifikasi;
 	}
-	public void setJmlIzinBelumSurvey(String jmlIzinBelumSurvey) {
-		this.jmlIzinBelumSurvey = jmlIzinBelumSurvey;
+	public void setJumlahIzinBelumVerifikasi(String jumlahIzinBelumVerifikasi) {
+		this.jumlahIzinBelumVerifikasi = jumlahIzinBelumVerifikasi;
 	}
-
-
+	public String getAlamat() {
+		return alamat;
+	}
+	public void setAlamat(String alamat) {
+		this.alamat = alamat;
+	}
 
 
 }

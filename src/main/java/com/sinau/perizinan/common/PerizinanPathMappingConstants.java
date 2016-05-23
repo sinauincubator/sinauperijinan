@@ -36,6 +36,15 @@ public interface PerizinanPathMappingConstants {
 	String MASTER_PROFIL_EDIT_JSP_PAGE = "masterprofiledit";
 
 	// Perizinan Pages
+
+	String PERIZINAN_PERMOHONANIZIN_VIEW_REQUEST_MAPPING = "permohonanizinview.htm";
+	String PERIZINAN_PERMOHONANIZIN_VIEW_JSP_PAGE = "permohonanizinview";
+	String PERIZINAN_PERMOHONANIZIN_ADD_REQUEST_MAPPING = "permohonanizinadd.htm";
+	String PERIZINAN_PERMOHONANIZIN_ADD_JSP_PAGE = "permohonanizinadd";
+	String PERIZINAN_PERMOHONANIZIN_EDIT_REQUEST_MAPPING = "permohonanizinedit.htm";
+	String PERIZINAN_PERMOHONANIZIN_EDIT_JSP_PAGE = "permohonanizinedit";
+
+
 	String PERIZINAN_SURVEY_VIEW_REQUEST_MAPPING = "surveyview.htm";
 	String PERIZINAN_SURVEY_VIEW_JSP_PAGE = "surveyview";
 	String PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING = "surveyedit.htm";

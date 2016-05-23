@@ -162,7 +162,7 @@
       <put-attribute name="title" value="Verifikasi Kepala Badan"/>
       <put-attribute name="body" value="/WEB-INF/jsp/kepalabadanedit.jsp"/>
   </definition>
-  
+
    <definition name="administrasiview" extends="baselayout">
       <put-attribute name="title" value="administrasi"/>
       <put-attribute name="body" value="/WEB-INF/jsp/administrasiview.jsp"/>
@@ -171,7 +171,21 @@
       <put-attribute name="title" value="Verifikasi administrasi"/>
       <put-attribute name="body" value="/WEB-INF/jsp/administrasiedit.jsp"/>
   </definition>
-  
+
+  <definition name="permohonanizinview" extends="baselayout">
+      <put-attribute name="title" value="Lihat Data Izin"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/permohonanizinview.jsp"/>
+  </definition>
+  	<definition name="permohonanizinadd" extends="baselayout">
+      <put-attribute name="title" value="Tambah Izin"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/permohonanizinadd.jsp"/>
+  </definition>
+  	<definition name="permohonanizinedit" extends="baselayout">
+      <put-attribute name="title" value="Edit Izin"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/permohonanizinedit.jsp"/>
+  </definition>
+
+
 
 </tiles-definitions>
 

@@ -18,34 +18,32 @@ import com.sinau.perizinan.domain.Survey;
 
 @Controller
 public class SurveyController {
-
 	protected static Logger logger = Logger.getLogger("controller");
 
-    @RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getSurveys(Model model) {
-    	logger.info("Received request to show all surveys");
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
+	public String getSurveys(Model model){
+		logger.info("Received request to show all surveys");
 
-    	List<Survey> surveys = new ArrayList<Survey>();
-    	Survey survey = new Survey();
-    	survey.setNoPermintaan("123456");
-    	survey.setPemohon("Andita Mega Wahyudi");
-    	survey.setNama("Andita");
-    	survey.setJenisKelamin("Perempuan");
-    	survey.setNoKTP("9868752936263");
-    	survey.setTglTerima("21-05-2016");
-    	survey.setTelepon("089675463750");
-    	survey.setJmlIzinBelumSurvey("5");
+		List<Survey> surveys = new ArrayList<Survey>();
+		Survey survey = new Survey();
+		survey.setNoPermintaan("001");
+		survey.setPemohon("Andita Mega Wahyudi");
+		survey.setNama("Andita");
+		survey.setJenisKelamin("Perempuan");
+		survey.setNoKtp("12345678910");
+		survey.setTanggalTerima("22-05-2016");
+		survey.setTelepon("0896 7546 3750");
+		survey.setJumlahIzinBelumVerifikasi("1");
+		survey.setAlamat("Cikarang");
+		surveys.add(survey);
 
+		model.addAttribute("surveys", surveys);
 
-    	surveys.add(survey);
+		return PerizinanPathMappingConstants.PERIZINAN_SURVEY_VIEW_JSP_PAGE;
 
-    	model.addAttribute("surveys", surveys);
-
-    	return PerizinanPathMappingConstants.PERIZINAN_SURVEY_VIEW_JSP_PAGE;
 	}
 
-
-    @RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
@@ -54,12 +52,14 @@ public class SurveyController {
     	return PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_JSP_PAGE;
 	}
 
-    @RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
     public String postEdit(@Valid @ModelAttribute("surveyAttribute") Survey survey, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
-    	logger.info("Received request to update survey");
+    	logger.info("Received request to update Survey");
 
-    	model.addAttribute("surveyAttribute", new Survey());
+		List<Survey> surveys = new ArrayList<Survey>();
 
-    	return PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_JSP_PAGE;
+    	model.addAttribute("surveys", surveys);
+
+    	return PerizinanPathMappingConstants.PERIZINAN_KEPBAG_EDIT_JSP_PAGE;
 	}
 }

@@ -64,16 +64,16 @@
 			                	<a href="" title="Permohonan Izin">Permohonan Izin</a>
 			                    <ul>
 			        		    	<li>
-		                        		<a href="#" title="Tambah Baru">Tambah Baru</a>
+		                        		<a href="permohonanizinadd.htm" title="Tambah Izin">Tambah Baru</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Perpanjang Izin">Perpanjang Izin</a>
+			                        	<a href="permohonanizinedit.htm" title="Edit Izin">Perpanjang Izin</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Perubahan Izin">Perubahan Izin</a>
+			                        	<a href="permohonanizinedit.htm" title="Edit Izin">Perubahan Izin</a>
 			            			</li>
 			            			<li class="last">
-			                        	<a href="#" title="Lihat Data Izin">Lihat Data Izin</a>
+			                        	<a href="permohonanizinview.htm" title="Lihat Data Izin">Lihat Data Izin</a>
 			            			</li>
 			            		</ul>
 	                		</li>
@@ -84,13 +84,13 @@
 		                        		<a href="administrasiview.htm" title="Administrasi">Administrasi</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Survey">Survey</a>
+			                        	<a href="surveyview.htm" title="Survey">Survey</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Kepala Seksi">Kepala Seksi</a>
+			                        	<a href="kepalaseksiview.htm" title="Kepala Seksi">Kepala Seksi</a>
 			            			</li>
 			            			<li>
-			                        	<a href="#" title="Kepala Bagian">Kepala Bagian</a>
+			                        	<a href="kepalabagianview.htm" title="Kepala Bagian">Kepala Bagian</a>
 			            			</li>
 			            			<li>
 			                        	<a href="kepalabidangview.htm" title="Kepala Bidang">Kepala Bidang</a>
