@@ -12,12 +12,20 @@
 
 <c:url var="saveUrl" value="pemohonadd.htm" />
 <form:form modelAttribute="pemohonAttribute" method="POST" action="${saveUrl}">
-	<h2>Detail Pemohon</h2>
 	<table style="width: 100%">
 		<tr>
-			<td><form:label path="nama">Nama</form:label></td>
-			<td>:</td>
-			<td>
+			<td colspan="3" rowspan="3"><b>Detail Pemohon</b></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="20%"><form:label path="nama">Nama</form:label></td>
+			<td width="2%">:</td>
+			<td width="78%">
 				<form:input path="nama" cssStyle="width:75%"/>
 				<script type="text/javascript">
 				Spring.addDecoration(new Spring.ElementDecoration({
@@ -270,9 +278,9 @@
 				</script>
 			</td>
 		</tr>
-	</table>
-	<h4>Alamat</h4>
-	<table style="width: 100%">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
 		<tr>
 			<td><form:label path="alamat">Alamat</form:label></td>
 			<td>:</td>
@@ -375,9 +383,15 @@
 				</script>
 			</td>
 		</tr>
-	</table>
-	<h2>Detail Perusahaan</h2>
-	<table style="width: 100%">
+		<tr>
+			<td colspan="3" rowspan="3"><b>Detail Perusahaan</b></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
 		<tr>
 			<td><form:label path="namaUsaha">Perusahaan</form:label></td>
 			<td>:</td>
@@ -633,9 +647,15 @@
 				</script>
 			</td>
 		</tr>
-	</table>
-	<h4>Legalitas Perusahaan</h4>
-	<table style="width: 100%">
+		<tr>
+			<td colspan="3" rowspan="3"><b>Legalitas Perusahaan<b></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
 		<tr>
 			<td><form:label path="namaNotaris">Nama Notaris(hanya untuk PT dan selain Koperasi)</form:label></td>
 			<td>:</td>

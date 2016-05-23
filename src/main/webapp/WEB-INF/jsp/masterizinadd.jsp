@@ -7,7 +7,7 @@
     </head>
 <body>
 
-<h1>Tambahkan Master Izin</h1>
+<h1>Tambah Izin</h1>
 
 <c:url var="saveUrl" value="masterizinadd.htm" />
 <form:form modelAttribute="masterIzinAttribute" method="POST" action="${saveUrl}">

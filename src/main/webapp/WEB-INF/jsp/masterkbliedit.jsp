@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Edit Master KBLI</h1>
+<h1>Edit KBLI</h1>
 
 <c:url var="saveUrl" value="masterkbliedit.htm" />
 <form:form modelAttribute="masterKbliAttribute" method="POST" action="${saveUrl}">

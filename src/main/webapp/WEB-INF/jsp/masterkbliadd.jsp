@@ -7,7 +7,7 @@
     </head>
 <body>
 
-<h1>Tambahkan Pemohon Baru</h1>
+<h1>Tambah KBLI</h1>
 
 <c:url var="saveUrl" value="masterkbliadd.htm" />
 <form:form modelAttribute="masterKbliAttribute" method="POST" action="${saveUrl}">

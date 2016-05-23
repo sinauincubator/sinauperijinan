@@ -41,11 +41,6 @@ public class PemohonController {
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_VIEW_JSP_PAGE;
 	}
 
-    @RequestMapping(value="coba.htm")
-    public String sembarang(){
-    	return "coba";
-    }
-
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");

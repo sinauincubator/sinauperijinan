@@ -11,8 +11,16 @@
 
 <c:url var="saveUrl" value="masterprofiledit.htm" />
 <form:form modelAttribute="masterProfilAttribute" method="POST" action="${saveUrl}">
-	<h2>Profil</h2>
 	<table style="width: 100%">
+		<tr>
+			<td colspan="3" rowspan="3"><b>Profil</b></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
 		<tr>
 			<td width="10%"><form:label path="instansi">Instansi</form:label></td>
 			<td width="2%">:</td>
@@ -115,9 +123,15 @@
 				</script>
 			</td>
 		</tr>
-	</table>
-	<h2>Petugas / Pejabat Berwenang</h2>
-	<table style="width: 100%">
+		<tr>
+			<td colspan="3" rowspan="3"><b>Petugas /Pejabat Berwenang</b></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
 		<tr>
 			<td><form:label path="kepalaBppt">Kepala BPPT</form:label></td>
 			<td>:</td>
@@ -187,8 +201,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-			</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td><form:label path="kabid">Kabid</form:label></td>
@@ -259,8 +272,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-			</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td><form:label path="kasi">Kasi</form:label></td>
@@ -331,8 +343,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-			</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td><form:label path="sekban">Sekban</form:label></td>
@@ -403,8 +414,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-			</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td><form:label path="surveyor">Surveyor</form:label></td>
