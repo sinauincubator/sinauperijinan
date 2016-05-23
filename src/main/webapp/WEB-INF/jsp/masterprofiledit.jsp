@@ -380,7 +380,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><form:label path="hpSekban">NIP</form:label></td>
+			<td><form:label path="hpSekban">HP</form:label></td>
 			<td>:</td>
 			<td>
 				<form:input path="hpSekban" cssStyle="width:75%"/>
