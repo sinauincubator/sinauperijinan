@@ -40,32 +40,32 @@ public interface PerizinanPathMappingConstants {
 	String PERIZINAN_SURVEY_VIEW_JSP_PAGE = "surveyview";
 	String PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING = "surveyedit.htm";
 	String PERIZINAN_SURVEY_EDIT_JSP_PAGE = "surveyedit";
-	 
+
 	String PERIZINAN_KEPSEK_VIEW_REQUEST_MAPPING = "kepalaseksiview.htm";
 	String PERIZINAN_KEPSEK_VIEW_JSP_PAGE = "kepalaseksiview";
 	String PERIZINAN_KEPSEK_EDIT_REQUEST_MAPPING = "kepalaseksiedit.htm";
 	String PERIZINAN_KEPSEK_EDIT_JSP_PAGE = "kepalaseksiedit";
-	 
+
 	String PERIZINAN_KEPBAG_VIEW_REQUEST_MAPPING = "kepalabagianview.htm";
 	String PERIZINAN_KEPBAG_VIEW_JSP_PAGE = "kepalabagianview";
 	String PERIZINAN_KEPBAG_EDIT_REQUEST_MAPPING = "kepalabagianedit.htm";
 	String PERIZINAN_KEPBAG_EDIT_JSP_PAGE = "kepalabagianedit";
-	 
-	String MASTER_KEPALABIDANG_VIEW_REQUEST_MAPPING = "kepalabidangview.htm";
-	String MASTER_KEPALABIDANG_VIEW_JSP_PAGE = "kepalabidangview";
-	String MASTER_KEPALABIDANG_EDIT_REQUEST_MAPPING = "kepalabidangedit.htm";
-	String MASTER_KEPALABIDANG_EDIT_JSP_PAGE = "kepalabidangedit";
 
-	String MASTER_KEPALABADAN_VIEW_REQUEST_MAPPING = "kepalabadanview.htm";
-	String MASTER_KEPALABADAN_VIEW_JSP_PAGE = "kepalabadanview";
-	String MASTER_KEPALABADAN_EDIT_REQUEST_MAPPING = "kepalabadanedit.htm";
-	String MASTER_KEPALABADAN_EDIT_JSP_PAGE = "kepalabadanedit";
-	 
-	String MASTER_SEKRETARIAT_VIEW_REQUEST_MAPPING = "sekretariatview.htm";
-	String MASTER_SEKRETARIAT_VIEW_JSP_PAGE = "sekretariatview";
-	String MASTER_SEKRETARIAT_EDIT_REQUEST_MAPPING = "sekretariatedit.htm";
+	String PERIZINAN_KEPALABIDANG_VIEW_REQUEST_MAPPING = "kepalabidangview.htm";
+	String PERIZINAN_KEPALABIDANG_VIEW_JSP_PAGE = "kepalabidangview";
+	String PERIZINAN_KEPALABIDANG_EDIT_REQUEST_MAPPING = "kepalabidangedit.htm";
+	String PERIZINAN_KEPALABIDANG_EDIT_JSP_PAGE = "kepalabidangedit";
+
+	String PERIZINAN_KEPALABADAN_VIEW_REQUEST_MAPPING = "kepalabadanview.htm";
+	String PERIZINAN_KEPALABADAN_VIEW_JSP_PAGE = "kepalabadanview";
+	String PERIZINAN_KEPALABADAN_EDIT_REQUEST_MAPPING = "kepalabadanedit.htm";
+	String PERIZINAN_KEPALABADAN_EDIT_JSP_PAGE = "kepalabadanedit";
+
+	String PERIZINAN_SEKRETARIAT_VIEW_REQUEST_MAPPING = "sekretariatview.htm";
+	String PERIZINAN_SEKRETARIAT_VIEW_JSP_PAGE = "sekretariatview";
+	String PERIZINAN_SEKRETARIAT_EDIT_REQUEST_MAPPING = "sekretariatedit.htm";
 	String MASTER_SEKRETARIAT_EDIT_JSP_PAGE = "sekretariatedit";
-	
+
 	String ADMINISTRASI_VIEW_REQUEST_MAPPING = "administrasiview.htm";
 	String ADMINISTRASI_VIEW_JSP_PAGE = "administrasiview";
 	String ADMINISTRASI_EDIT_REQUEST_MAPPING = "administrasiedit.htm";

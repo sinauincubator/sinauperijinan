@@ -20,7 +20,7 @@ import com.sinau.perizinan.domain.KepalaBidang;
 public class KepalaBidangController {
 	protected static Logger logger = Logger.getLogger("controller");
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABIDANG_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
 	public String getKepalaBidangs(Model model){
 		logger.info("Received request to show all kepalabidangs");
 
@@ -39,20 +39,20 @@ public class KepalaBidangController {
 
 		model.addAttribute("kepalabidangs", kepalabidangs);
 
-		return PerizinanPathMappingConstants.MASTER_KEPALABIDANG_VIEW_JSP_PAGE;
+		return PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_VIEW_JSP_PAGE;
 
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABIDANG_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
     	model.addAttribute("kepalaBidangAttribute", new KepalaBidang());
 
-    	return PerizinanPathMappingConstants.MASTER_KEPALABIDANG_EDIT_JSP_PAGE;
+    	return PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_JSP_PAGE;
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABIDANG_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
     public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBidang kepalaBidang, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Kepala Bidang");
 
@@ -60,6 +60,6 @@ public class KepalaBidangController {
 
     	model.addAttribute("kepalabidangs", kepalabidangs);
 
-    	return PerizinanPathMappingConstants.MASTER_KEPALABIDANG_EDIT_JSP_PAGE;
+    	return PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_JSP_PAGE;
 	}
 }

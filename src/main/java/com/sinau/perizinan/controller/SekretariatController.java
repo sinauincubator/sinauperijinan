@@ -20,7 +20,7 @@ import com.sinau.perizinan.domain.Sekretariat;
 public class SekretariatController {
 	protected static Logger logger = Logger.getLogger("controller");
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_SEKRETARIAT_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SEKRETARIAT_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
 	public String getSekretariats(Model model){
 		logger.info("Received request to show all sekretariats");
 
@@ -39,11 +39,11 @@ public class SekretariatController {
 
 		model.addAttribute("sekretariats", sekretariats);
 
-		return PerizinanPathMappingConstants.MASTER_SEKRETARIAT_VIEW_JSP_PAGE;
+		return PerizinanPathMappingConstants.PERIZINAN_SEKRETARIAT_VIEW_JSP_PAGE;
 
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_SEKRETARIAT_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SEKRETARIAT_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
@@ -52,7 +52,7 @@ public class SekretariatController {
     	return PerizinanPathMappingConstants.MASTER_SEKRETARIAT_EDIT_JSP_PAGE;
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_SEKRETARIAT_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SEKRETARIAT_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
     public String postEdit(@Valid @ModelAttribute("sekretariatAttribute") Sekretariat sekretariat, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Sekretariat");
 

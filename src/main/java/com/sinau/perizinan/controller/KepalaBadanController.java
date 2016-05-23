@@ -20,7 +20,7 @@ import com.sinau.perizinan.domain.KepalaBadan;
 public class KepalaBadanController {
 	protected static Logger logger = Logger.getLogger("controller");
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABADAN_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
 	public String getKepalaBadans(Model model){
 		logger.info("Received request to show all kepalabadans");
 
@@ -39,20 +39,20 @@ public class KepalaBadanController {
 
 		model.addAttribute("kepalabadans", kepalabadans);
 
-		return PerizinanPathMappingConstants.MASTER_KEPALABADAN_VIEW_JSP_PAGE;
+		return PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_VIEW_JSP_PAGE;
 
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABADAN_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
     	model.addAttribute("kepalaBadanAttribute", new KepalaBadan());
 
-    	return PerizinanPathMappingConstants.MASTER_KEPALABADAN_EDIT_JSP_PAGE;
+    	return PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_EDIT_JSP_PAGE;
 	}
 
-	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KEPALABADAN_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
+	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
     public String postEdit(@Valid @ModelAttribute("kepalaBadanAttribute") KepalaBadan kepalaBadan, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Kepala Badan");
 
@@ -60,6 +60,6 @@ public class KepalaBadanController {
 
     	model.addAttribute("kepalabadans", kepalabadans);
 
-    	return PerizinanPathMappingConstants.MASTER_KEPALABIDANG_EDIT_JSP_PAGE;
+    	return PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_JSP_PAGE;
 	}
 }
