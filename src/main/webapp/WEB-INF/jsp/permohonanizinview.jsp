@@ -27,7 +27,6 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${permohonanizins}" var="permohonanizin">
-			<c:url var="editUrl" value="permohonanizinedit.htm?nomorPermintaan=${permohonanizin.nomorPermintaan}" />
 		<tr>
 			<td><c:out value="${permohonanizin.nomorPermintaan}" /></td>
 			<td><c:out value="${permohonanizin.namaPemohon}" /></td>
@@ -40,8 +39,6 @@
 			<td><c:out value="${permohonanizin.tglInput}" /></td>
 			<td><c:out value="${permohonanizin.tglSelesai}" /></td>
 			<td><c:out value="${permohonanizin.entryOleh}" /></td>
-
-			<td><a href="${editUrl}">Edit</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>

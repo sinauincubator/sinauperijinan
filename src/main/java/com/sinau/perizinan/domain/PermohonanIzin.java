@@ -13,6 +13,16 @@ public class PermohonanIzin {
 	private String tglSelesai;
 	private String entryOleh;
 
+	private String alamat;
+	private String telepon;
+	private String tanggal;
+	private String waktuProses;
+	private String extDoc;
+	private String docNo;
+	private String kode;
+	private String keterangan;
+	private String photo;
+
 	public String getNomorPermintaan() {
 		return nomorPermintaan;
 	}
@@ -79,6 +89,61 @@ public class PermohonanIzin {
 	public void setEntryOleh(String entryOleh) {
 		this.entryOleh = entryOleh;
 	}
+	public String getAlamat() {
+		return alamat;
+	}
+	public void setAlamat(String alamat) {
+		this.alamat = alamat;
+	}
+	public String getTelepon() {
+		return telepon;
+	}
+	public void setTelepon(String telepon) {
+		this.telepon = telepon;
+	}
+	public String getTanggal() {
+		return tanggal;
+	}
+	public void setTanggal(String tanggal) {
+		this.tanggal = tanggal;
+	}
+	public String getWaktuProses() {
+		return waktuProses;
+	}
+	public void setWaktuProses(String waktuProses) {
+		this.waktuProses = waktuProses;
+	}
+	public String getExtDoc() {
+		return extDoc;
+	}
+	public void setExtDoc(String extDoc) {
+		this.extDoc = extDoc;
+	}
+	public String getDocNo() {
+		return docNo;
+	}
+	public void setDocNo(String docNo) {
+		this.docNo = docNo;
+	}
+	public String getKode() {
+		return kode;
+	}
+	public void setKode(String kode) {
+		this.kode = kode;
+	}
+	public String getKeterangan() {
+		return keterangan;
+	}
+	public void setKeterangan(String keterangan) {
+		this.keterangan = keterangan;
+	}
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
 
 
 

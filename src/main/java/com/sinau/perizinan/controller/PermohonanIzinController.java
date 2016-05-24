@@ -67,7 +67,7 @@ public class PermohonanIzinController {
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_PERMOHONANIZIN_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getEdit(@RequestParam(value="nomorPermintaan", required=true) String nomorPermintaan, Model model) {
+    public String getEdit(Model model) {
     	logger.info("Received request to show edit page");
 
     	model.addAttribute("permohonanIzinAttribute", new PermohonanIzin());
@@ -76,7 +76,7 @@ public class PermohonanIzinController {
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_PERMOHONANIZIN_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("permohonanIzinAttribute") PermohonanIzin permohonanIzin, @RequestParam(value="nomorPermintaan", required=true) String nomorPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("permohonanIzinAttribute") PermohonanIzin permohonanIzin,  Model model) {
     	logger.info("Received request to update permohonan izin");
 
     	List<PermohonanIzin> permohonanizins = new ArrayList<PermohonanIzin>();

@@ -1,4 +1,4 @@
-package com.sinau.perizinan.common;
+ package com.sinau.perizinan.common;
 
 public interface PerizinanPathMappingConstants {
 
@@ -43,7 +43,6 @@ public interface PerizinanPathMappingConstants {
 	String PERIZINAN_PERMOHONANIZIN_ADD_JSP_PAGE = "permohonanizinadd";
 	String PERIZINAN_PERMOHONANIZIN_EDIT_REQUEST_MAPPING = "permohonanizinedit.htm";
 	String PERIZINAN_PERMOHONANIZIN_EDIT_JSP_PAGE = "permohonanizinedit";
-
 
 	String PERIZINAN_SURVEY_VIEW_REQUEST_MAPPING = "surveyview.htm";
 	String PERIZINAN_SURVEY_VIEW_JSP_PAGE = "surveyview";
