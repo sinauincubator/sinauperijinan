@@ -82,6 +82,12 @@ public interface PerizinanPathMappingConstants {
 	// Pencetakan Pages
 
 	// Laporan Pages
+	String LAPORAN_MONITORING_VIEW_REQUEST_MAPPING = "monitoringview.htm";
+	String LAPORAN_MONITORING_VIEW_JSP_PAGE = "monitoringview";
+	String LAPORAN_MONITORING_ADD_REQUEST_MAPPING = "monitoringadd.htm";
+	String LAPORAN_MONITORING_ADD_JSP_PAGE = "monitoringadd";
+	String LAPORAN_MONITORING_EDIT_REQUEST_MAPPING = "monitoringedit.htm";
+	String LAPORAN_MONITORING_EDIT_JSP_PAGE = "monitoringedit";
 
 	// Privasi Pengguna Pages
 

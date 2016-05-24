@@ -185,7 +185,18 @@
       <put-attribute name="body" value="/WEB-INF/jsp/permohonanizinedit.jsp"/>
   </definition>
 
-
+<definition name="monitoringview" extends="baselayout">
+      <put-attribute name="title" value="monitoring"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/monitoringview.jsp"/>
+  </definition>
+  <definition name="monitoringadd" extends="baselayout">
+      <put-attribute name="title" value="ubah data monitoring"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/monitoringadd.jsp"/>
+  </definition>
+  <definition name="monitoringedit" extends="baselayout">
+      <put-attribute name="title" value="edit monitoring"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/monitoringedit.jsp"/>
+  </definition>
 
 </tiles-definitions>
 

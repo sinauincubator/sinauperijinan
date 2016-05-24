@@ -117,7 +117,7 @@
 			            <a href="" title="Laporan" class="current" >Laporan</a>
 			            <ul>
 			        		<li>
-			                	<a href="#" title="Monitoring">Monitoring</a>
+			                	<a href="monitoringview.htm" title="Monitoring">Monitoring</a>
 			            	</li>
 			            	<li class="last">
 			                	<a href="#" title="Summary">Summary</a>
