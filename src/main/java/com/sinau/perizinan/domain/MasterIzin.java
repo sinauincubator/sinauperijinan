@@ -1,6 +1,7 @@
 package com.sinau.perizinan.domain;
 
 public class MasterIzin {
+	//izin
 	private String kodeIzin;
 	private String jenis;
 	private String izin;
@@ -8,6 +9,13 @@ public class MasterIzin {
 	private String peraturan;
 	private String kpi;
 	private String aktif;
+
+	//Syarat-syarat
+	private String kodeIzinSyarat;
+	private String kodeSyarat;
+	private String syarat;
+	private String aktifSyarat;
+
 
 	public String getKodeIzin() {
 		return kodeIzin;
@@ -50,5 +58,29 @@ public class MasterIzin {
 	}
 	public void setAktif(String aktif) {
 		this.aktif = aktif;
+	}
+	public String getKodeIzinSyarat() {
+		return kodeIzinSyarat;
+	}
+	public void setKodeIzinSyarat(String kodeIzinSyarat) {
+		this.kodeIzinSyarat = kodeIzinSyarat;
+	}
+	public String getKodeSyarat() {
+		return kodeSyarat;
+	}
+	public void setKodeSyarat(String kodeSyarat) {
+		this.kodeSyarat = kodeSyarat;
+	}
+	public String getSyarat() {
+		return syarat;
+	}
+	public void setSyarat(String syarat) {
+		this.syarat = syarat;
+	}
+	public String getAktifSyarat() {
+		return aktifSyarat;
+	}
+	public void setAktifSyarat(String aktifSyarat) {
+		this.aktifSyarat = aktifSyarat;
 	}
 }

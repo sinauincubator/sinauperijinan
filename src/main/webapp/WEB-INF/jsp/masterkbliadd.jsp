@@ -54,6 +54,6 @@
 		    elementId: "submit",
 		    event: "onclick" }));
 	</script>
-	</form:form>
+</form:form>
 </body>
 </html>

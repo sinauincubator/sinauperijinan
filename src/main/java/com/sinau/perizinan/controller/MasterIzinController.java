@@ -35,6 +35,10 @@ public class MasterIzinController {
 		masterIzin.setPeraturan("-");
 		masterIzin.setKpi("KPI");
 		masterIzin.setAktif("aktif");
+		masterIzin.setKodeIzinSyarat("12345");
+		masterIzin.setKodeSyarat("23");
+		masterIzin.setSyarat("Fotocopy KTP");
+		masterIzin.setAktifSyarat("AKTIF");
 		masterIzins.add(masterIzin);
 
 		model.addAttribute("masterizins", masterIzins);

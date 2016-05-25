@@ -133,6 +133,79 @@
 			</tr>
 	</table>
 
+	<h1>Tambah Syarat-Syarat</h2>
+
+	<table style="width: 100%">
+	<tr>
+		<td width="10%"><form:label path="kodeIzinSyarat">Kode Izin</form:label></td>
+		<td width="2%">:</td>
+		<td width="88%">
+			<form:input path="kodeIzinSyarat" cssStyle="width:75%"/>
+			<script type="text/javascript">
+			Spring.addDecoration(new Spring.ElementDecoration({
+				elementId : "kodeIzinSyarat",
+				widgetType : "dijit.form.ValidationTextBox",
+				widgetAttrs : {
+					trim : true,
+					required : true
+				}
+			}));
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td><form:label path="kodeSyarat">Kode Syarat</form:label></td>
+		<td>:</td>
+		<td>
+			<form:input path="kodeSyarat" cssStyle="width:75%"/>
+			<script type="text/javascript">
+			Spring.addDecoration(new Spring.ElementDecoration({
+				elementId : "kodeSyarat",
+				widgetType : "dijit.form.ValidationTextBox",
+				widgetAttrs : {
+					trim : true,
+					required : true
+				}
+			}));
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td><form:label path="syarat">Syarat</form:label></td>
+		<td>:</td>
+		<td>
+			<form:input path="syarat" cssStyle="width:75%"/>
+			<script type="text/javascript">
+			Spring.addDecoration(new Spring.ElementDecoration({
+				elementId : "syarat",
+				widgetType : "dijit.form.ValidationTextBox",
+				widgetAttrs : {
+					trim : true,
+					required : true
+				}
+			}));
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td><form:label path="aktifSyarat">Aktif</form:label></td>
+		<td>:</td>
+		<td>
+			<form:input path="aktifSyarat" cssStyle="width:75%"/>
+			<script type="text/javascript">
+			Spring.addDecoration(new Spring.ElementDecoration({
+				elementId : "aktifSyarat",
+				widgetType : "dijit.form.ValidationTextBox",
+				widgetAttrs : {
+					trim : true,
+					required : true
+				}
+			}));
+			</script>
+		</td>
+	</tr>
+</table>
+
 	<input id="submit" type="submit" value="Save" />
 	<script type="text/javascript">
 	    Spring.addDecoration(new Spring.ValidateAllDecoration({
