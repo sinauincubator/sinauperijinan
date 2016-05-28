@@ -3,15 +3,19 @@ package com.sinau.perizinan.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
 import com.sinau.perizinan.domain.Administrasi;
+import com.sinau.perizinan.domain.KepalaBadan;
 
 @Controller
 public class AdministrasiController {
@@ -38,5 +42,24 @@ public class AdministrasiController {
 
 		return PerizinanPathMappingConstants.ADMINISTRASI_VIEW_JSP_PAGE;
 
+	}
+	@RequestMapping(value = PerizinanPathMappingConstants.ADMINISTRASI_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
+    public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    	logger.info("Received request to show edit page");
+
+    	model.addAttribute("administrasiAttribute", new Administrasi());
+
+    	return PerizinanPathMappingConstants.ADMINISTRASI_EDIT_JSP_PAGE;
+	}
+
+	@RequestMapping(value = PerizinanPathMappingConstants.ADMINISTRASI_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
+    public String postEdit(@Valid @ModelAttribute("administrasiAttribute") KepalaBadan kepalaBadan, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    	logger.info("Received request to update Kepala Badan");
+
+		List<Administrasi> administrasis = new ArrayList<Administrasi>();
+
+    	model.addAttribute("administrasis", administrasis);
+
+    	return PerizinanPathMappingConstants.ADMINISTRASI_EDIT_REQUEST_MAPPING;
 	}
 }
