@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.Pengguna;
+import com.sinau.perizinan.form.PenggunaForm;
 
 @Controller
 public class PenggunaController {
@@ -25,8 +25,8 @@ public class PenggunaController {
     public String getPenggunas(Model model) {
     	logger.info("Received request to show all penggunas");
 
-    	List<Pengguna> penggunas = new ArrayList<Pengguna>();
-    	Pengguna pengguna = new Pengguna();
+    	List<PenggunaForm> penggunas = new ArrayList<PenggunaForm>();
+    	PenggunaForm pengguna = new PenggunaForm();
     	pengguna.setIdPengguna("123456");
     	pengguna.setNamaLengkap("Andita Mega Wahyudi");
     	pengguna.setRoleManajemen("123");
@@ -43,16 +43,16 @@ public class PenggunaController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("penggunaAttribute", new Pengguna());
+    	model.addAttribute("penggunaAttribute", new PenggunaForm());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_ADD_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("penggunaAttribute") Pengguna pengguna, Model model) {
+    public String postAdd(@Valid @ModelAttribute("penggunaAttribute") PenggunaForm pengguna, Model model) {
 		logger.info("Received request to add new pengguna");
 
-		model.addAttribute("penggunaAttribute", new Pengguna());
+		model.addAttribute("penggunaAttribute", new PenggunaForm());
 
    		return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_ADD_JSP_PAGE;
 	}
@@ -61,16 +61,16 @@ public class PenggunaController {
     public String getEdit(@RequestParam(value="idPengguna", required=true) String idPengguna, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("penggunaAttribute", new Pengguna());
+    	model.addAttribute("penggunaAttribute", new PenggunaForm());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("penggunaAttribute") Pengguna pengguna, @RequestParam(value="idPengguna", required=true) String idPengguna, Model model) {
+    public String postEdit(@Valid @ModelAttribute("penggunaAttribute") PenggunaForm pengguna, @RequestParam(value="idPengguna", required=true) String idPengguna, Model model) {
     	logger.info("Received request to update pengguna");
 
-    	model.addAttribute("penggunaAttribute", new Pengguna());
+    	model.addAttribute("penggunaAttribute", new PenggunaForm());
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE;
 	}

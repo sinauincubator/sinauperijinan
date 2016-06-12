@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.MasterProfil;
+import com.sinau.perizinan.form.MasterProfilForm;
 
 @Controller
 public class MasterProfilController {
@@ -23,16 +23,16 @@ public class MasterProfilController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("masterProfilAttribute", new MasterProfil());
+    	model.addAttribute("masterProfilAttribute", new MasterProfilForm());
 
     	return PerizinanPathMappingConstants.MASTER_PROFIL_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_PROFIL_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("masterProfilAttribute") MasterProfil masterProfil, Model model) {
+    public String postAdd(@Valid @ModelAttribute("masterProfilAttribute") MasterProfilForm masterProfil, Model model) {
 		logger.info("Received request to add new masterprofil");
 
-		List<MasterProfil> masterprofils = new ArrayList<MasterProfil>();
+		List<MasterProfilForm> masterprofils = new ArrayList<MasterProfilForm>();
 
    		model.addAttribute("masterprofils", masterprofils);
 

@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-	public class Administrasi {
+	public class AdministrasiForm {
 
 		private String noPermintaan;
 		private String pemohon;

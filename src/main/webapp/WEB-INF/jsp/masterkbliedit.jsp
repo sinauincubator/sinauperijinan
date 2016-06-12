@@ -13,13 +13,13 @@
 <form:form modelAttribute="masterKbliAttribute" method="POST" action="${saveUrl}">
 	<table style="width: 100%">
 		<tr>
-			<td width="10%"><form:label path="kbli">KBLI</form:label></td>
+			<td width="10%"><form:label path="kodeKbli">KBLI</form:label></td>
 			<td width="2%">:</td>
 			<td width="88%">
-				<form:input path="kbli" cssStyle="width:75%"/>
+				<form:input path="kodeKbli" cssStyle="width:75%"/>
 				<script type="text/javascript">
 				Spring.addDecoration(new Spring.ElementDecoration({
-					elementId : "kbli",
+					elementId : "kodeKbli",
 					widgetType : "dijit.form.ValidationTextBox",
 					widgetAttrs : {
 						trim : true,

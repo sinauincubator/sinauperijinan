@@ -1,7 +1,7 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
 
-public class Pemohon {
+public class PemohonForm {
 	//detail yang mendaftarkan
 	private String nama;
 	private String nomorKtp;

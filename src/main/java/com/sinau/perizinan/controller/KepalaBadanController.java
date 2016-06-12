@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.KepalaBadan;
+import com.sinau.perizinan.form.KepalaBadanForm;
 
 @Controller
 public class KepalaBadanController {
@@ -24,8 +24,8 @@ public class KepalaBadanController {
 	public String getKepalaBadans(Model model){
 		logger.info("Received request to show all kepalabadans");
 
-		List<KepalaBadan> kepalabadans = new ArrayList<KepalaBadan>();
-		KepalaBadan kepalaBadan = new KepalaBadan();
+		List<KepalaBadanForm> kepalabadans = new ArrayList<KepalaBadanForm>();
+		KepalaBadanForm kepalaBadan = new KepalaBadanForm();
 		kepalaBadan.setNoPermintaan("001");
 		kepalaBadan.setPemohon("Heru Santoso");
 		kepalaBadan.setNama("Sinau Academy");
@@ -47,16 +47,16 @@ public class KepalaBadanController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("kepalaBadanAttribute", new KepalaBadan());
+    	model.addAttribute("kepalaBadanAttribute", new KepalaBadanForm());
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABADAN_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("kepalaBadanAttribute") KepalaBadan kepalaBadan, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("kepalaBadanAttribute") KepalaBadanForm kepalaBadan, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Kepala Badan");
 
-		List<KepalaBadan> kepalabadans = new ArrayList<KepalaBadan>();
+		List<KepalaBadanForm> kepalabadans = new ArrayList<KepalaBadanForm>();
 
     	model.addAttribute("kepalabadans", kepalabadans);
 

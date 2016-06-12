@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class Survey {
+public class SekretariatForm {
 	private String noPermintaan;
 	private String pemohon;
 	private String nama;
@@ -10,6 +10,7 @@ public class Survey {
 	private String telepon;
 	private String jumlahIzinBelumVerifikasi;
 	private String alamat;
+
 	public String getNoPermintaan() {
 		return noPermintaan;
 	}

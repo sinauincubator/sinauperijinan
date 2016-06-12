@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.KepalaBidang;
+import com.sinau.perizinan.form.KepalaBidangForm;
 
 @Controller
 public class KepalaBidangController {
@@ -24,8 +24,8 @@ public class KepalaBidangController {
 	public String getKepalaBidangs(Model model){
 		logger.info("Received request to show all kepalabidangs");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
-		KepalaBidang kepalaBidang = new KepalaBidang();
+		List<KepalaBidangForm> kepalabidangs = new ArrayList<KepalaBidangForm>();
+		KepalaBidangForm kepalaBidang = new KepalaBidangForm();
 		kepalaBidang.setNoPermintaan("001");
 		kepalaBidang.setPemohon("Heru Santoso");
 		kepalaBidang.setNama("Sinau Academy");
@@ -47,16 +47,16 @@ public class KepalaBidangController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("kepalaBidangAttribute", new KepalaBidang());
+    	model.addAttribute("kepalaBidangAttribute", new KepalaBidangForm());
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPALABIDANG_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBidang kepalaBidang, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("kepalaBidangAttribute") KepalaBidangForm kepalaBidang, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Kepala Bidang");
 
-		List<KepalaBidang> kepalabidangs = new ArrayList<KepalaBidang>();
+		List<KepalaBidangForm> kepalabidangs = new ArrayList<KepalaBidangForm>();
 
     	model.addAttribute("kepalabidangs", kepalabidangs);
 

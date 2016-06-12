@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class Monitoring {
+public class MonitoringForm {
 	private String pengesahan;
 	private String noPermintaan;
 	private String kodeIzin;

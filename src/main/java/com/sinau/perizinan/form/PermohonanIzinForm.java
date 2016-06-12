@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class PermohonanIzin {
+public class PermohonanIzinForm {
 	private String nomorPermintaan;
 	private String namaPemohon;
 	private String idPemohon;

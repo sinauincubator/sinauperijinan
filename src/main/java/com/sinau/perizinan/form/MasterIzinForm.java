@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class MasterIzin {
+public class MasterIzinForm {
 	//izin
 	private String kodeIzin;
 	private String jenis;

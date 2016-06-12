@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.Monitoring;
+import com.sinau.perizinan.form.MonitoringForm;
 
 @Controller
 public class MonitoringController {
@@ -25,8 +25,8 @@ public class MonitoringController {
     public String getmonitorings(Model model) {
     	logger.info("Received request to show all monitorings");
 
-    	List<Monitoring> monitorings = new ArrayList<Monitoring>();
-    	Monitoring monitoring = new Monitoring();
+    	List<MonitoringForm> monitorings = new ArrayList<MonitoringForm>();
+    	MonitoringForm monitoring = new MonitoringForm();
     	monitoring.setPengesahan("Salaph Alghibrany");
     	monitoring.setnoPermintaan("I.000000000034");
     	monitoring.setkodeIzin("11");
@@ -44,16 +44,16 @@ public class MonitoringController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("monitoringAttribute", new Monitoring());
+    	model.addAttribute("monitoringAttribute", new MonitoringForm());
 
     	return PerizinanPathMappingConstants.LAPORAN_MONITORING_ADD_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.LAPORAN_MONITORING_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("monitoringAttribute") Monitoring monitoring, Model model) {
+    public String postAdd(@Valid @ModelAttribute("monitoringAttribute") MonitoringForm monitoring, Model model) {
 		logger.info("Received request to add new monitoring");
 
-		List<Monitoring> monitorings = new ArrayList<Monitoring>();
+		List<MonitoringForm> monitorings = new ArrayList<MonitoringForm>();
 
    		model.addAttribute("monitorings", monitorings);
 
@@ -64,16 +64,16 @@ public class MonitoringController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
     	
-    	model.addAttribute("monitoringAttribute", new Monitoring());
+    	model.addAttribute("monitoringAttribute", new MonitoringForm());
 
     	return PerizinanPathMappingConstants.LAPORAN_MONITORING_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.LAPORAN_MONITORING_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("monitoringAttribute") Monitoring monitoring, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("monitoringAttribute") MonitoringForm monitoring, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update monitoring");
 
-		List<Monitoring> monitorings = new ArrayList<Monitoring>();
+		List<MonitoringForm> monitorings = new ArrayList<MonitoringForm>();
 
     	model.addAttribute("monitorings", monitorings);
 

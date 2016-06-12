@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class MasterProfil {
+public class MasterProfilForm {
 	//profil
 	private String instansi;
 	private String nama;

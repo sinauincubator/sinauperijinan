@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.*;
+import com.sinau.perizinan.form.*;
 
 @Controller
 public class MasterIzinController {
@@ -26,8 +26,8 @@ public class MasterIzinController {
 	public String getMasterIzins(Model model){
 		logger.info("Received request to show all masterizins");
 
-		List<MasterIzin> masterIzins = new ArrayList<MasterIzin>();
-		MasterIzin masterIzin = new MasterIzin();
+		List<MasterIzinForm> masterIzins = new ArrayList<MasterIzinForm>();
+		MasterIzinForm masterIzin = new MasterIzinForm();
 		masterIzin.setKodeIzin("12345");
 		masterIzin.setJenis("SIUP");
 		masterIzin.setIzin("Siup");
@@ -50,16 +50,16 @@ public class MasterIzinController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("masterIzinAttribute", new MasterIzin());
+    	model.addAttribute("masterIzinAttribute", new MasterIzinForm());
 
     	return PerizinanPathMappingConstants.MASTER_IZIN_ADD_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_IZIN_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("masterIzinAttribute") MasterIzin masterIzin, Model model) {
+    public String postAdd(@Valid @ModelAttribute("masterIzinAttribute") MasterIzinForm masterIzin, Model model) {
 		logger.info("Received request to add new masterizin");
 
-		List<MasterIzin> masterizins = new ArrayList<MasterIzin>();
+		List<MasterIzinForm> masterizins = new ArrayList<MasterIzinForm>();
 
    		model.addAttribute("masterizins", masterizins);
 
@@ -70,16 +70,16 @@ public class MasterIzinController {
     public String getEdit(@RequestParam(value="kodeIzin", required=true) String kodeIzin, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("masterIzinAttribute", new MasterIzin());
+    	model.addAttribute("masterIzinAttribute", new MasterIzinForm());
 
     	return PerizinanPathMappingConstants.MASTER_IZIN_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_IZIN_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") MasterIzin masterIzin, @RequestParam(value="kodeIzin", required=true) String kodeIzin, Model model) {
+    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") MasterIzinForm masterIzin, @RequestParam(value="kodeIzin", required=true) String kodeIzin, Model model) {
     	logger.info("Received request to update master izin");
 
-		List<MasterIzin> masterizins = new ArrayList<MasterIzin>();
+		List<MasterIzinForm> masterizins = new ArrayList<MasterIzinForm>();
 
     	model.addAttribute("masterizins", masterizins);
 

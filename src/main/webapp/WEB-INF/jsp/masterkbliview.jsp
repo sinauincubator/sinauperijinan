@@ -17,9 +17,9 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${masterkblis}" var="masterkbli">
-			<c:url var="editUrl" value="masterkbliedit.htm?kbli=${masterkbli.kbli}" />
+			<c:url var="editUrl" value="masterkbliedit.htm?kbli=${masterkbli.kodeKbli}" />
 		<tr>
-			<td><c:out value="${masterkbli.kbli}" /></td>
+			<td><c:out value="${masterkbli.kodeKbli}" /></td>
 			<td><c:out value="${masterkbli.deskripsi}" /></td>
 			<td><a href="${editUrl}">Edit</a></td>
 		</tr>

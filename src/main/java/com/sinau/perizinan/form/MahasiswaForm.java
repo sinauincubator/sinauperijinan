@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class Mahasiswa {
+public class MahasiswaForm {
 
     private String id;
 

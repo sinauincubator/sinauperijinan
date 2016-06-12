@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class Privasi {
+public class PrivasiForm {
 	private String idPrivasi;
 	private String roleName;
 

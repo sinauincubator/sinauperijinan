@@ -1,6 +1,6 @@
-package com.sinau.perizinan.domain;
+package com.sinau.perizinan.form;
 
-public class KepalaSeksi {
+public class KepalaBadanForm {
 	private String noPermintaan;
 	private String pemohon;
 	private String nama;

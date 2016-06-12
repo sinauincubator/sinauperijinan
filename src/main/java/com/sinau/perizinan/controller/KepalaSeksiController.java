@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.KepalaSeksi;
+import com.sinau.perizinan.form.KepalaSeksiForm;
 
 @Controller
 public class KepalaSeksiController {
@@ -24,8 +24,8 @@ public class KepalaSeksiController {
 	public String getKepalaSeksis(Model model){
 		logger.info("Received request to show all kepalaseksis");
 
-		List<KepalaSeksi> kepalaseksis = new ArrayList<KepalaSeksi>();
-		KepalaSeksi kepalaSeksi = new KepalaSeksi();
+		List<KepalaSeksiForm> kepalaseksis = new ArrayList<KepalaSeksiForm>();
+		KepalaSeksiForm kepalaSeksi = new KepalaSeksiForm();
 		kepalaSeksi.setNoPermintaan("001");
 		kepalaSeksi.setPemohon("Andita Mega Wahyudi");
 		kepalaSeksi.setNama("Andita");
@@ -47,16 +47,16 @@ public class KepalaSeksiController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("kepalaSeksiAttribute", new KepalaSeksi());
+    	model.addAttribute("kepalaSeksiAttribute", new KepalaSeksiForm());
 
     	return PerizinanPathMappingConstants.PERIZINAN_KEPSEK_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_KEPSEK_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("kepalaSeksiAttribute") KepalaSeksi kepalaSeksi, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("kepalaSeksiAttribute") KepalaSeksiForm kepalaSeksi, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Kepala Seksi");
 
-		List<KepalaSeksi> kepalaseksis = new ArrayList<KepalaSeksi>();
+		List<KepalaSeksiForm> kepalaseksis = new ArrayList<KepalaSeksiForm>();
 
     	model.addAttribute("kepalaseksis", kepalaseksis);
 

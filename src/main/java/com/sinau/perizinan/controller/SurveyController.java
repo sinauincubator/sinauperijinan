@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.Survey;
+import com.sinau.perizinan.form.SurveyForm;
 
 @Controller
 public class SurveyController {
@@ -24,8 +24,8 @@ public class SurveyController {
 	public String getSurveys(Model model){
 		logger.info("Received request to show all surveys");
 
-		List<Survey> surveys = new ArrayList<Survey>();
-		Survey survey = new Survey();
+		List<SurveyForm> surveys = new ArrayList<SurveyForm>();
+		SurveyForm survey = new SurveyForm();
 		survey.setNoPermintaan("001");
 		survey.setPemohon("Andita Mega Wahyudi");
 		survey.setNama("Andita");
@@ -47,16 +47,16 @@ public class SurveyController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("surveyAttribute", new Survey());
+    	model.addAttribute("surveyAttribute", new SurveyForm());
 
     	return PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SURVEY_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("surveyAttribute") Survey survey, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("surveyAttribute") SurveyForm survey, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Survey");
 
-		List<Survey> surveys = new ArrayList<Survey>();
+		List<SurveyForm> surveys = new ArrayList<SurveyForm>();
 
     	model.addAttribute("surveys", surveys);
 

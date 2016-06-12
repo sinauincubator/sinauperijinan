@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.Sekretariat;
+import com.sinau.perizinan.form.SekretariatForm;
 
 @Controller
 public class SekretariatController {
@@ -24,8 +24,8 @@ public class SekretariatController {
 	public String getSekretariats(Model model){
 		logger.info("Received request to show all sekretariats");
 
-		List<Sekretariat> sekretariats = new ArrayList<Sekretariat>();
-		Sekretariat sekretariat = new Sekretariat();
+		List<SekretariatForm> sekretariats = new ArrayList<SekretariatForm>();
+		SekretariatForm sekretariat = new SekretariatForm();
 		sekretariat.setNoPermintaan("001");
 		sekretariat.setPemohon("Heru Santoso");
 		sekretariat.setNama("Sinau Academy");
@@ -47,16 +47,16 @@ public class SekretariatController {
     public String getEdit(@RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("sekretariatAttribute", new Sekretariat());
+    	model.addAttribute("sekretariatAttribute", new SekretariatForm());
 
     	return PerizinanPathMappingConstants.MASTER_SEKRETARIAT_EDIT_JSP_PAGE;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.PERIZINAN_SEKRETARIAT_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("sekretariatAttribute") Sekretariat sekretariat, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
+    public String postEdit(@Valid @ModelAttribute("sekretariatAttribute") SekretariatForm sekretariat, @RequestParam(value="noPermintaan", required=true) String noPermintaan, Model model) {
     	logger.info("Received request to update Sekretariat");
 
-		List<Sekretariat> sekretariats = new ArrayList<Sekretariat>();
+		List<SekretariatForm> sekretariats = new ArrayList<SekretariatForm>();
 
     	model.addAttribute("sekretariats", sekretariats);
 

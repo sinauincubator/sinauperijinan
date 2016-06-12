@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.domain.Pemohon;
+import com.sinau.perizinan.form.PemohonForm;
 
 @Controller
 public class PemohonController {
@@ -25,8 +25,8 @@ public class PemohonController {
     public String getPemohons(Model model) {
     	logger.info("Received request to show all pemohons");
 
-    	List<Pemohon> pemohons = new ArrayList<Pemohon>();
-    	Pemohon pemohon = new Pemohon();
+    	List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
+    	PemohonForm pemohon = new PemohonForm();
     	pemohon.setAlamat("jl.mendaki dan berliku no.9");
     	pemohon.setBadanUsaha("PT. Usaha Rakyat");
     	pemohon.setIdPemohon("123");
@@ -45,16 +45,16 @@ public class PemohonController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("pemohonAttribute", new Pemohon());
+    	model.addAttribute("pemohonAttribute", new PemohonForm());
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") Pemohon pemohon, Model model) {
+    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohon, Model model) {
 		logger.info("Received request to add new pemohon");
 
-		List<Pemohon> pemohons = new ArrayList<Pemohon>();
+		List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
 
    		model.addAttribute("pemohons", pemohons);
 
@@ -65,16 +65,16 @@ public class PemohonController {
     public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("pemohonAttribute", new Pemohon());
+    	model.addAttribute("pemohonAttribute", new PemohonForm());
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") Pemohon pemohon, @RequestParam(value="id", required=true) String id, Model model) {
+    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohon, @RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to update pemohon");
 
-		List<Pemohon> pemohons = new ArrayList<Pemohon>();
+		List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
 
     	model.addAttribute("pemohons", pemohons);
 
