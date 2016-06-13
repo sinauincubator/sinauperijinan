@@ -1,11 +1,14 @@
 package com.sinau.perizinan.controller;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,28 +18,38 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
 import com.sinau.perizinan.form.PemohonForm;
+import com.sinau.perizinan.model.Pemohon;
+import com.sinau.perizinan.service.PemohonService;
 
 @Controller
 public class PemohonController {
 
 	protected static Logger logger = Logger.getLogger("controller");
 
+	@Autowired
+	private PemohonService pemohonService;
+
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getPemohons(Model model) {
     	logger.info("Received request to show all pemohons");
 
-    	List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
-    	PemohonForm pemohon = new PemohonForm();
-    	pemohon.setAlamat("jl.mendaki dan berliku no.9");
-    	pemohon.setBadanUsaha("PT. Usaha Rakyat");
-    	pemohon.setIdPemohon("123");
-    	pemohon.setJenisKelamin("Laki-Laki");
-    	pemohon.setJenisPemohon("Perorangan");
-    	pemohon.setNamaPemohon("Sukijan");
-    	pemohon.setNamaUsaha("Usaha Rakyat");
-    	pemohons.add(pemohon);
+    	List<Pemohon> pemohons = this.pemohonService.listPemohons();
 
-    	model.addAttribute("pemohons", pemohons);
+    	List<PemohonForm> pemohonsForm = new ArrayList<PemohonForm>();
+    	for(Pemohon pemohon : pemohons){
+    		PemohonForm pemohonForm = new PemohonForm();
+    		try{
+    			BeanUtils.copyProperties(pemohonForm, pemohon);
+    		} catch (IllegalAccessException e){
+    			e.printStackTrace();
+    		} catch (InvocationTargetException e){
+    			e.printStackTrace();
+    		}
+
+    		pemohonsForm.add(pemohonForm);
+    	}
+
+    	model.addAttribute("pemohons", pemohonsForm);
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_VIEW_JSP_PAGE;
 	}
@@ -51,12 +64,20 @@ public class PemohonController {
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohon, Model model) {
+    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohonForm, Model model) {
 		logger.info("Received request to add new pemohon");
 
-		List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
-
-   		model.addAttribute("pemohons", pemohons);
+		Pemohon pemohon = new Pemohon();
+		try{
+			BeanUtils.copyProperties(pemohon, pemohonForm);
+			this.pemohonService.addPemohon(pemohon);
+		} catch (IllegalAccessException e){
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} finally {
+			model.addAttribute("pemohonAttribute", pemohonForm);
+		}
 
    		return PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_JSP_PAGE;
 	}

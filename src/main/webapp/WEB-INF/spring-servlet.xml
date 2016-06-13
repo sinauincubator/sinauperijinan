@@ -37,6 +37,7 @@
 			<list>
 				<value>com.sinau.perizinan.model.MasterKbli</value>
 				<value>com.sinau.perizinan.model.Privasi</value>
+				<value>com.sinau.perizinan.model.Pemohon</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
