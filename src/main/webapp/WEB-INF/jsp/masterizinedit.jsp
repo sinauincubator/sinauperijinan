@@ -133,7 +133,7 @@
 		</tr>
 		</table>
 
-		<h1>Edit Syarat-Syarat</h2>
+		<h2>Edit Syarat-Syarat</h2>
 
 		<table style="width: 100%">
 		<tr>

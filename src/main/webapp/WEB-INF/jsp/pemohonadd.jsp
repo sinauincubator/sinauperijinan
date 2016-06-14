@@ -648,7 +648,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3" rowspan="3"><b>Legalitas Perusahaan<b></td>
+			<td colspan="3" rowspan="3"><b>Legalitas Perusahaan</b></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
