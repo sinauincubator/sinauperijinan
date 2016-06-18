@@ -12,23 +12,13 @@ import org.springframework.stereotype.Repository;
 import com.sinau.perizinan.model.MasterKbli;
 
 @Repository
-public class MasterKbliDAOImpl implements MasterKbliDAO {
+public class MasterKbliDAOImpl extends GenericRepositoryDAOImpl<MasterKbli> implements MasterKbliDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	public void addMasterKbli(MasterKbli masterKbli) {
-		Session session = this.sessionFactory.getCurrentSession();
-		session.save(masterKbli);
-	}
-
-	public void updateMasterKbli(MasterKbli masterKbli) {
-		Session session = this.sessionFactory.getCurrentSession();
-		session.update(masterKbli);
-	}
 
 	@SuppressWarnings("unchecked")
-	public List<MasterKbli> listMasterKblis() {
+	public List<MasterKbli> getAllMasterKbli() {
 		Session session = this.sessionFactory.getCurrentSession();
 		List<MasterKbli> masterKbliList = session.createQuery("from MasterKbli").list();
 		

@@ -4,11 +4,9 @@ import java.util.List;
 
 import com.sinau.perizinan.model.MasterKbli;
 
-public interface MasterKbliDAO {
+public interface MasterKbliDAO extends GenericRepositoryDAO<MasterKbli> {
 
-	public void addMasterKbli(MasterKbli masterKbli);
-	public void updateMasterKbli(MasterKbli masterKbli);
 	public MasterKbli findByExample(MasterKbli masterKbli);
-	public List<MasterKbli> listMasterKblis();
+	public List<MasterKbli> getAllMasterKbli();
 	
 }

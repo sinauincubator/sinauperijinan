@@ -17,27 +17,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.form.PemohonForm;
-import com.sinau.perizinan.model.Pemohon;
-import com.sinau.perizinan.service.PemohonService;
+import com.sinau.perizinan.form.MasterPemohonForm;
+import com.sinau.perizinan.model.MasterPemohon;
+import com.sinau.perizinan.service.MasterPemohonService;
 
 @Controller
-public class PemohonController {
+public class MasterPemohonController {
 
 	protected static Logger logger = Logger.getLogger("controller");
 
 	@Autowired
-	private PemohonService pemohonService;
+	private MasterPemohonService pemohonService;
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getPemohons(Model model) {
     	logger.info("Received request to show all pemohons");
 
-    	List<Pemohon> pemohons = this.pemohonService.listPemohons();
+    	List<MasterPemohon> pemohons = this.pemohonService.listPemohons();
 
-    	List<PemohonForm> pemohonsForm = new ArrayList<PemohonForm>();
-    	for(Pemohon pemohon : pemohons){
-    		PemohonForm pemohonForm = new PemohonForm();
+    	List<MasterPemohonForm> pemohonsForm = new ArrayList<MasterPemohonForm>();
+    	for(MasterPemohon pemohon : pemohons){
+    		MasterPemohonForm pemohonForm = new MasterPemohonForm();
     		try{
     			BeanUtils.copyProperties(pemohonForm, pemohon);
     		} catch (IllegalAccessException e){
@@ -58,16 +58,16 @@ public class PemohonController {
     public String getAdd(Model model) {
     	logger.info("Received request to show add page");
 
-    	model.addAttribute("pemohonAttribute", new PemohonForm());
+    	model.addAttribute("pemohonAttribute", new MasterPemohonForm());
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohonForm, Model model) {
+    public String postAdd(@Valid @ModelAttribute("pemohonAttribute") MasterPemohonForm pemohonForm, Model model) {
 		logger.info("Received request to add new pemohon");
 
-		Pemohon pemohon = new Pemohon();
+		MasterPemohon pemohon = new MasterPemohon();
 		try{
 			BeanUtils.copyProperties(pemohon, pemohonForm);
 			this.pemohonService.addPemohon(pemohon);
@@ -86,16 +86,16 @@ public class PemohonController {
     public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to show edit page");
 
-    	model.addAttribute("pemohonAttribute", new PemohonForm());
+    	model.addAttribute("pemohonAttribute", new MasterPemohonForm());
 
     	return PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_JSP_PAGE;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") PemohonForm pemohon, @RequestParam(value="id", required=true) String id, Model model) {
+    public String postEdit(@Valid @ModelAttribute("pemohonAttribute") MasterPemohonForm pemohon, @RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to update pemohon");
 
-		List<PemohonForm> pemohons = new ArrayList<PemohonForm>();
+		List<MasterPemohonForm> pemohons = new ArrayList<MasterPemohonForm>();
 
     	model.addAttribute("pemohons", pemohons);
 

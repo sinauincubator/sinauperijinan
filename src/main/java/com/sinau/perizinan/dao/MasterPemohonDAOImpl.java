@@ -7,28 +7,28 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sinau.perizinan.model.Pemohon;
+import com.sinau.perizinan.model.MasterPemohon;
 
 @Repository
-public class PemohonDAOImpl implements PemohonDAO{
+public class MasterPemohonDAOImpl implements MasterPemohonDAO{
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void addPemohon(Pemohon pemohon) {
+	public void addPemohon(MasterPemohon pemohon) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.save(pemohon);
 	}
 
-	public void updatePemohon(Pemohon pemohon) {
+	public void updatePemohon(MasterPemohon pemohon) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.update(pemohon);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Pemohon> listPemohons() {
+	public List<MasterPemohon> listPemohons() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Pemohon> pemohonList = session.createQuery("from Pemohon").list();
+		List<MasterPemohon> pemohonList = session.createQuery("from MasterPemohon").list();
 		return pemohonList;
 	}
 

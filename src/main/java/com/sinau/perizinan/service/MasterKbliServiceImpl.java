@@ -10,24 +10,14 @@ import com.sinau.perizinan.dao.MasterKbliDAO;
 import com.sinau.perizinan.model.MasterKbli;
 
 @Service
-public class MasterKbliServiceImpl implements MasterKbliService {
+public class MasterKbliServiceImpl extends GenericServiceImpl<MasterKbli> implements MasterKbliService {
 
 	@Autowired
 	private MasterKbliDAO masterKbliDAO;
 
 	@Transactional
-	public void addMasterKbli(MasterKbli masterKbli) {
-		this.masterKbliDAO.addMasterKbli(masterKbli);
-	}
-
-	@Transactional
-	public void updateMasterKbli(MasterKbli masterKbli) {
-		this.masterKbliDAO.updateMasterKbli(masterKbli);
-	}
-
-	@Transactional
-	public List<MasterKbli> listMasterKblis() {
-		return this.masterKbliDAO.listMasterKblis();
+	public List<MasterKbli> getAllMasterKbli() {
+		return this.masterKbliDAO.getAllMasterKbli();
 	}
 
 	@Transactional

@@ -33,7 +33,7 @@ public class MasterKbliController {
 	public String getMasterKblis(Model model){
 		logger.info("Received request to show all masterkbli");
 
-		List<MasterKbli> masterKblis = this.masterKbliService.listMasterKblis();
+		List<MasterKbli> masterKblis = this.masterKbliService.getAllMasterKbli();
 
 		List<MasterKbliForm> masterKblisForm = new ArrayList<MasterKbliForm>();
 		for(MasterKbli masterKbli : masterKblis) {
@@ -71,7 +71,7 @@ public class MasterKbliController {
 		MasterKbli masterKbli = new MasterKbli();
 		try {
 			BeanUtils.copyProperties(masterKbli, masterKbliForm);
-			this.masterKbliService.addMasterKbli(masterKbli);
+			this.masterKbliService.add(masterKbli);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
@@ -120,7 +120,7 @@ public class MasterKbliController {
     	MasterKbli masterKbli = new MasterKbli();
 		try {
 			BeanUtils.copyProperties(masterKbli, masterKbliForm);
-			this.masterKbliService.updateMasterKbli(masterKbli);
+			this.masterKbliService.update(masterKbli);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {

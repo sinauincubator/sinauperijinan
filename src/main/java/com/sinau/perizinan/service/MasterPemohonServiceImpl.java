@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sinau.perizinan.dao.PemohonDAO;
-import com.sinau.perizinan.model.Pemohon;
+import com.sinau.perizinan.dao.MasterPemohonDAO;
+import com.sinau.perizinan.model.MasterPemohon;
 
 @Service
-public class PemohonServiceImpl implements PemohonService{
+public class MasterPemohonServiceImpl implements MasterPemohonService{
 
 	@Autowired
-	private PemohonDAO pemohonDAO;
+	private MasterPemohonDAO pemohonDAO;
 
 	@Transactional
-	public void addPemohon(Pemohon pemohon) {
+	public void addPemohon(MasterPemohon pemohon) {
 		this.pemohonDAO.addPemohon(pemohon);
 	}
 
 	@Transactional
-	public void updatePemohon(Pemohon pemohon) {
+	public void updatePemohon(MasterPemohon pemohon) {
 		this.pemohonDAO.updatePemohon(pemohon);
 	}
 
 	@Transactional
-	public List<Pemohon> listPemohons() {
+	public List<MasterPemohon> listPemohons() {
 		return this.pemohonDAO.listPemohons();
 	}
 
