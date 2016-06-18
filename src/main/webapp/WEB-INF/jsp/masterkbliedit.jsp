@@ -13,6 +13,7 @@
 <form:form modelAttribute="masterKbliAttribute" method="POST" action="${saveUrl}">
 	<table style="width: 100%">
 		<tr>
+			<form:hidden path="id" />
 			<td width="10%"><form:label path="kodeKbli">KBLI</form:label></td>
 			<td width="2%">:</td>
 			<td width="88%">

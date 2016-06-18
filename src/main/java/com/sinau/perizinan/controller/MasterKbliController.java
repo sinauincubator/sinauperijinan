@@ -7,6 +7,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,21 +84,50 @@ public class MasterKbliController {
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KBLI_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getEdit(@RequestParam(value="kbli", required=true) String kbli, Model model) {
+    public String getEdit(@RequestParam(value="id", required=true) String id, Model model) {
     	logger.info("Received request to show edit page");
+    	String resultPage = PerizinanPathMappingConstants.MASTER_KBLI_EDIT_JSP_PAGE; 
 
-    	model.addAttribute("masterKbliAttribute", new MasterKbliForm());
+    	MasterKbliForm masterKbliForm = new MasterKbliForm();
+    	MasterKbli masterKbli = new MasterKbli();
+		try {
+			if(StringUtils.isNotBlank(id)) {
+				masterKbli.setId(Integer.parseInt(id));
+				masterKbli = this.masterKbliService.findByExample(masterKbli);
+				if(masterKbli != null) {
+					BeanUtils.copyProperties(masterKbliForm, masterKbli);
+				} else {
+					resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+				}
+			} else {
+				resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			}
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} finally {
+			model.addAttribute("masterKbliAttribute", masterKbliForm);
+		}
 
-    	return PerizinanPathMappingConstants.MASTER_KBLI_EDIT_JSP_PAGE;
+    	return resultPage;
 	}
 
 	@RequestMapping(value = PerizinanPathMappingConstants.MASTER_KBLI_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("masterKbliAttribute") MasterKbliForm masterKbli, @RequestParam(value="kbli", required=true) String kbli, Model model) {
+    public String postEdit(@Valid @ModelAttribute("masterKbliAttribute") MasterKbliForm masterKbliForm, Model model) {
     	logger.info("Received request to update master kbli");
 
-		List<MasterKbliForm> masterkblis = new ArrayList<MasterKbliForm>();
-
-    	model.addAttribute("masterkblis", masterkblis);
+    	MasterKbli masterKbli = new MasterKbli();
+		try {
+			BeanUtils.copyProperties(masterKbli, masterKbliForm);
+			this.masterKbliService.updateMasterKbli(masterKbli);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} finally {
+			model.addAttribute("masterKbliAttribute", masterKbliForm);
+		}
 
     	return PerizinanPathMappingConstants.MASTER_KBLI_EDIT_JSP_PAGE;
 	}

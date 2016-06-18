@@ -30,4 +30,9 @@ public class MasterKbliServiceImpl implements MasterKbliService {
 		return this.masterKbliDAO.listMasterKblis();
 	}
 
+	@Transactional
+	public MasterKbli findByExample(MasterKbli masterKbli) {		
+		return this.masterKbliDAO.findByExample(masterKbli);
+	}
+
 }
