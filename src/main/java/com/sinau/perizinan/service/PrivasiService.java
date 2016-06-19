@@ -4,10 +4,9 @@ import java.util.List;
 
 import com.sinau.perizinan.model.Privasi;
 
-public interface PrivasiService {
+public interface PrivasiService extends GenericService<Privasi> {
 
-	public void addPrivasi(Privasi privasi);
-	public void updatePrivasi(Privasi privasi);
-	public List<Privasi> listPrivasis();
+	public Privasi findByExample(Privasi privasi);
+	public List<Privasi> getAllPrivasi();
 
 }

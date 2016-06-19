@@ -10,25 +10,18 @@ import com.sinau.perizinan.dao.PrivasiDAO;
 import com.sinau.perizinan.model.Privasi;
 
 @Service
-public class PrivasiServiceImpl implements PrivasiService{
+public class PrivasiServiceImpl extends GenericServiceImpl<Privasi> implements PrivasiService{
 
 	@Autowired
 	private PrivasiDAO privasiDAO;
 
 	@Transactional
-	public void addPrivasi(Privasi privasi) {
-		this.privasiDAO.addPrivasi(privasi);
+	public List<Privasi> getAllPrivasi() {
+		return this.privasiDAO.getAllPrivasi();
 	}
 
 	@Transactional
-	public void updatePrivasi(Privasi privasi) {
-		this.privasiDAO.updatePrivasi(privasi);
+	public Privasi findByExample(Privasi privasi) {
+		return this.privasiDAO.findByExample(privasi);
 	}
-
-	@Transactional
-	public List<Privasi> listPrivasis() {
-		return this.privasiDAO.listPrivasis();
-	}
-
-
 }
