@@ -21,7 +21,7 @@ import com.sinau.perizinan.model.MasterKbli;
 import com.sinau.perizinan.service.MasterKbliService;
 
 @Controller
-public class MasterKbliController extends GenericBaseController<MasterKbliForm> {
+public class MasterKbliController {
 	protected static Logger logger = Logger.getLogger("controller");
 	
 	@Autowired
