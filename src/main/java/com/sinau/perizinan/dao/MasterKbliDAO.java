@@ -6,7 +6,6 @@ import com.sinau.perizinan.model.MasterKbli;
 
 public interface MasterKbliDAO extends GenericRepositoryDAO<MasterKbli> {
 
-	public MasterKbli findByExample(MasterKbli masterKbli);
 	public List<MasterKbli> getAllMasterKbli(int currentIndex) throws Exception;
 	public MasterKbli getById(Integer id) throws Exception;
 	public int getRowCount() throws Exception;

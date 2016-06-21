@@ -1,0 +1,81 @@
+/* Search Result
+---------------------------------------- */
+.pagingSearchResult {
+	width: 20%; 
+	float: left; 
+	padding: 6px 0px;
+}
+
+.pagingSearchResultTitle {
+	font-weight: bold;
+	color: #204a87;
+	padding: 0 0px;
+	margin: 0 2px;
+	background-color: #fff;
+	font-size: 1.2em;
+	text-decoration: none;
+}
+
+
+/* Pagination
+---------------------------------------- */
+.pagingContentResult {
+	width: 50%; 
+	float: right;
+}
+
+.pagingItem {
+	font-weight: bold;
+	text-decoration: none;
+	color: #204a87;
+	margin: 0 2px;
+	padding: 0 2px;
+	background-color: #d7e9f5;
+	border: 1px solid #bababa;
+	font-size: 1em;
+	line-height: 2em;
+}
+
+.pagingItemCurrent {	
+	font-weight: bold;
+	color: #E2144A;
+	padding: 0 2px;
+	margin: 0 2px;
+	background-color: #fff;
+	border: 1px solid #bfbfbf;
+	font-size: 1em;
+	width:100%;
+}
+
+.pagingItemCurrent a {	
+    text-decoration: none;
+    margin: 0;
+    text-align:center;
+}
+
+.pagingDots {
+	font-weight: bold;
+}
+
+.pagingContentResult span:hover {
+	border-color: #fff;
+	background-color: #fff;
+	border: 1px solid #bfbfbf;
+	color: #E2144A;
+}
+
+.pagingContentResult span a:hover {
+	border-color: #fff;
+	background-color: #fff;
+	color: #E2144A;
+	text-decoration: none;
+}
+
+/* separator */
+.separatorDivider {
+   top: 0px;
+   border-bottom-width: 2px;
+   border-bottom-color: #717171;
+   border-bottom-style: solid;
+   margin-bottom: 0.5em;
+}

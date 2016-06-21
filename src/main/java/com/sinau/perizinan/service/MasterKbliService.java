@@ -8,7 +8,6 @@ import com.sinau.perizinan.model.MasterKbli;
 
 public interface MasterKbliService extends GenericService<MasterKbli> {
 
-	public MasterKbli findByExample(MasterKbli masterKbli);
 	public PagingRecord<MasterKbliForm> getAllMasterKbli(int currentIndex) throws IllegalAccessException, InvocationTargetException, Exception;
 	public MasterKbliForm getById(Integer id) throws Exception;
 	

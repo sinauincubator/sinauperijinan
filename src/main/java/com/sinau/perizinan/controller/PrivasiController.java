@@ -76,6 +76,8 @@ public class PrivasiController {
 			e.printStackTrace();
 		} catch (InvocationTargetException e){
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			model.addAttribute("privasiAttribute", privasiForm);
 		}
@@ -125,7 +127,9 @@ public class PrivasiController {
     		e.printStackTrace();
     	}catch (InvocationTargetException e){
     		e.printStackTrace();
-    	} finally {
+    	} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
     		model.addAttribute("privasiAttribute", privasiForm);
     	}
 

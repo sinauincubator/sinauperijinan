@@ -39,11 +39,6 @@ public class MasterKbliServiceImpl extends GenericServiceImpl<MasterKbli> implem
 	}
 
 	@Transactional
-	public MasterKbli findByExample(MasterKbli masterKbli) {		
-		return this.masterKbliDAO.findByExample(masterKbli);
-	}
-
-	@Transactional
 	public MasterKbliForm getById(Integer id) throws Exception {
 		MasterKbli masterKbliResult = this.masterKbliDAO.getById(id); 
 		MasterKbliForm masterKbliFormResult = new MasterKbliForm();
