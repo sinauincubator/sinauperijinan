@@ -7,6 +7,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import com.sinau.perizinan.form.PrivasiForm;
 import com.sinau.perizinan.model.Privasi;
 import com.sinau.perizinan.service.PrivasiService;
 
+
 @Controller
 public class PrivasiController {
 	protected static Logger logger = Logger.getLogger("controller");
@@ -32,7 +34,7 @@ public class PrivasiController {
     public String getPrivasis(Model model) {
     	logger.info("Received request to show all privasi");
 
-    	List<Privasi> privasis = this.privasiService.listPrivasis();
+    	List<Privasi> privasis = this.privasiService.getAllPrivasi();
 
     	List<PrivasiForm> privasisForm = new ArrayList<PrivasiForm>();
     	for(Privasi privasi : privasis){
@@ -69,7 +71,7 @@ public class PrivasiController {
 		Privasi privasi = new Privasi();
 		try{
 			BeanUtils.copyProperties(privasi, privasiForm);
-			this.privasiService.addPrivasi(privasi);
+			this.privasiService.add(privasi);
 		} catch (IllegalAccessException e){
 			e.printStackTrace();
 		} catch (InvocationTargetException e){
@@ -84,19 +86,49 @@ public class PrivasiController {
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
     public String getEdit(@RequestParam(value="idPrivasi", required=true) String idPrivasi, Model model) {
     	logger.info("Received request to show edit page");
+    	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 
-    	model.addAttribute("privasiAttribute", new PrivasiForm());
+    	PrivasiForm privasiForm = new PrivasiForm();
+    	Privasi privasi = new Privasi();
+    	try{
+    		if(StringUtils.isNotBlank(idPrivasi)){
+    			privasi.setIdPrivasi(Integer.parseInt(idPrivasi));
+    			privasi = this.privasiService.findByExample(privasi);
+    			if(privasi != null){
+    				BeanUtils.copyProperties(privasiForm, privasi);
+    			} else {
+    				resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+    			}
+    		} else{
+    			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+    		}
+    	} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} finally {
+			model.addAttribute("privasiAttribute", privasiForm);
+		}
 
-    	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
-	}
+    	return resultPage;
+    }
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING, method = RequestMethod.POST)
-    public String postEdit(@Valid @ModelAttribute("privasiAttribute") PrivasiForm privasi, @RequestParam(value="idPrivasi", required=true) String idPrivasi, Model model) {
+    public String postEdit(@Valid @ModelAttribute("privasiAttribute") PrivasiForm privasiForm, Model model) {
     	logger.info("Received request to update privasi");
 
-		List<PrivasiForm> privasis = new ArrayList<PrivasiForm>();
+    	Privasi privasi = new Privasi();
+    	try {
+    		BeanUtils.copyProperties(privasi, privasiForm);
+    		this.privasiService.update(privasi);
+    	} catch(IllegalAccessException e){
+    		e.printStackTrace();
+    	}catch (InvocationTargetException e){
+    		e.printStackTrace();
+    	} finally {
+    		model.addAttribute("privasiAttribute", privasiForm);
+    	}
 
-    	model.addAttribute("privasis", privasis);
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 	}
