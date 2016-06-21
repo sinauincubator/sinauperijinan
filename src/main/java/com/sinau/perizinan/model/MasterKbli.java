@@ -20,7 +20,7 @@ public class MasterKbli implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="KODE_KBLI")
+	@Column(name="KODE_KBLI", unique = true)
 	private String kodeKbli;
 	
 	@Column(name="DESKRIPSI")

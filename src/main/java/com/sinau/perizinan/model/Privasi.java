@@ -1,6 +1,8 @@
 package com.sinau.perizinan.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PRIVASI")
-public class Privasi {
+public class Privasi implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(name="ID_PRIVASI")
 	private int idPrivasi;

@@ -40,19 +40,6 @@
       <put-attribute name="body" value="/WEB-INF/jsp/pemohonedit.jsp"/>
   </definition>
 
-  <definition name="mahasiswa" extends="baselayout">
-      <put-attribute name="title" value="Mahasiswa"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswapage.jsp"/>
-  </definition>
-  <definition name="mahasiswaadd" extends="baselayout">
-      <put-attribute name="title" value="Mahasiswa Add"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaadd.jsp"/>
-  </definition>
-  <definition name="mahasiswaedit" extends="baselayout">
-      <put-attribute name="title" value="Mahasiswa Edit"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/mahasiswaedit.jsp"/>
-  </definition>
-
   <definition name="masterizinview" extends="baselayout">
       <put-attribute name="title" value="Master Izin"/>
       <put-attribute name="body" value="/WEB-INF/jsp/masterizinview.jsp"/>

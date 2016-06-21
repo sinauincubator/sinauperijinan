@@ -11,12 +11,12 @@ public class GenericServiceImpl<T> implements GenericService<T> {
 	private GenericRepositoryDAO<T> repositoryDAO;
 	
 	@Transactional
-	public void add(T object) {
+	public void add(T object) throws Exception {
 		this.repositoryDAO.add(object);
 	}
 
 	@Transactional
-	public void update(T object) {
+	public void update(T object) throws Exception {
 		this.repositoryDAO.update(object);
 	}
 

@@ -10,11 +10,11 @@ public class GenericRepositoryDAOImpl<T> implements GenericRepositoryDAO<T> {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public void add(T object) {
+	public void add(T object) throws Exception {
 		sessionFactory.getCurrentSession().save(object);
 	}
 
-	public void update(T object) {
+	public void update(T object) throws Exception {
 		sessionFactory.getCurrentSession().update(object);
 	}
 
