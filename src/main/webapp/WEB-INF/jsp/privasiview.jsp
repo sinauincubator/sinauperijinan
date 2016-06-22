@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
 <head>
@@ -7,24 +8,32 @@
 <body>
 <h1><a href="privasiadd.htm">Daftar Privasi Baru</a></h1>
 
-<table style="border: 1px solid; width: 98%">
-	<thead style="background:#EBDEF0">
+<c:url value="privasiview.htm" var="pagedLink"></c:url>
+<div style="width: 98%">
+	<tg:paging pagingRecord="${pagingRecord}" pagedLink="${pagedLink}"/>
+</div>
+
+<table style="border: 1px solid; width: 98%; text-align: center;">
+	<thead style="background:#bbbbff; font-weight: bold;">
 		<tr>
 			<th>Role ID</th>
 			<th>Role Name</th>
-			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${privasis}" var="privasi">
+	<c:forEach items="${pagingRecord.records}" var="privasi">
 			<c:url var="editUrl" value="privasiedit.htm?idPrivasi=${privasi.idPrivasi}" />
 		<tr>
-			<td><c:out value="${privasi.idPrivasi}" /></td>
+			<td><a href="${editUrl}"><c:out value="${privasi.idPrivasi}" /></a></td>
 			<td><c:out value="${privasi.roleName}" /></td>
-			<td><a href="${editUrl}">Edit</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>
 </table>
+
+<script>
+	$( "tr:odd" ).css( "background-color", "#f2f2f2" );
+</script>
+
 </body>
 </html>

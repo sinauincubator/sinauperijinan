@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sinau.perizinan.common.PagingRecord;
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
+import com.sinau.perizinan.form.MasterKbliForm;
 import com.sinau.perizinan.form.PrivasiForm;
 import com.sinau.perizinan.model.Privasi;
 import com.sinau.perizinan.service.PrivasiService;
@@ -31,28 +33,36 @@ public class PrivasiController {
 	private PrivasiService privasiService;
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_VIEW_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getPrivasis(Model model) {
+    public String getView(@RequestParam(value="page", required=false) Integer currentIndex, Model model) {
     	logger.info("Received request to show all privasi");
 
-    	List<Privasi> privasis = this.privasiService.getAllPrivasi();
+    	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_VIEW_JSP_PAGE;
 
-    	List<PrivasiForm> privasisForm = new ArrayList<PrivasiForm>();
-    	for(Privasi privasi : privasis){
-    		PrivasiForm privasiForm = new PrivasiForm();
-    		try {
-    			BeanUtils.copyProperties(privasiForm, privasi);
-    		} catch (IllegalAccessException e){
-    			e.printStackTrace();
-    		} catch (InvocationTargetException e){
-    			e.printStackTrace();
-    		}
+    	PagingRecord<PrivasiForm> pageList = null;
+		try {
+			if(currentIndex == null) {
+				currentIndex = 0;
+			}
+			pageList = this.privasiService.getAllPrivasi(currentIndex);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
 
-    		privasisForm.add(privasiForm);
-    	}
+			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
 
-    	model.addAttribute("privasis", privasisForm);
+			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+		} catch (Exception e) {
+			e.printStackTrace();
 
-    	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_VIEW_JSP_PAGE;
+			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+		} finally {
+			model.addAttribute("pagingRecord", pageList);
+		}
+
+
+
+    	return resultPage;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_ADD_REQUEST_MAPPING, method = RequestMethod.GET)
@@ -68,49 +78,42 @@ public class PrivasiController {
     public String postAdd(@Valid @ModelAttribute("privasiAttribute") PrivasiForm privasiForm, Model model) {
 		logger.info("Received request to add new privasi");
 
+		String resulPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_ADD_JSP_PAGE;
+
 		Privasi privasi = new Privasi();
 		try{
 			BeanUtils.copyProperties(privasi, privasiForm);
 			this.privasiService.add(privasi);
 		} catch (IllegalAccessException e){
-			e.printStackTrace();
+			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
 		} catch (InvocationTargetException e){
-			e.printStackTrace();
+			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO ganti not found dengan meaningful message ke use
+			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
 		} finally {
 			model.addAttribute("privasiAttribute", privasiForm);
 		}
 
-   		return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_ADD_JSP_PAGE;
+   		return resulPage;
 	}
 
     @RequestMapping(value = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING, method = RequestMethod.GET)
-    public String getEdit(@RequestParam(value="idPrivasi", required=true) String idPrivasi, Model model) {
+    public String getEdit(@RequestParam(value="idPrivasi", required=true) Integer idPrivasi, Model model) {
     	logger.info("Received request to show edit page");
+
     	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 
     	PrivasiForm privasiForm = new PrivasiForm();
-    	Privasi privasi = new Privasi();
     	try{
-    		if(StringUtils.isNotBlank(idPrivasi)){
-    			privasi.setIdPrivasi(Integer.parseInt(idPrivasi));
-    			privasi = this.privasiService.findByExample(privasi);
-    			if(privasi != null){
-    				BeanUtils.copyProperties(privasiForm, privasi);
-    			} else {
-    				resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
-    			}
-    		} else{
-    			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
-    		}
-    	} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		} finally {
-			model.addAttribute("privasiAttribute", privasiForm);
-		}
+    		privasiForm = this.privasiService.getById(idPrivasi);
+    	} catch (Exception e){
+    		e.printStackTrace();
+
+    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+    	} finally {
+    		model.addAttribute("privasiAttribute", privasiForm);
+    	}
 
     	return resultPage;
     }
@@ -119,21 +122,29 @@ public class PrivasiController {
     public String postEdit(@Valid @ModelAttribute("privasiAttribute") PrivasiForm privasiForm, Model model) {
     	logger.info("Received request to update privasi");
 
+    	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
+
     	Privasi privasi = new Privasi();
     	try {
     		BeanUtils.copyProperties(privasi, privasiForm);
     		this.privasiService.update(privasi);
     	} catch(IllegalAccessException e){
     		e.printStackTrace();
+
+    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
     	}catch (InvocationTargetException e){
     		e.printStackTrace();
+
+    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
     	} catch (Exception e) {
 			e.printStackTrace();
+
+			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
 		} finally {
     		model.addAttribute("privasiAttribute", privasiForm);
     	}
 
 
-    	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
-	}
+    	return resultPage;
+    }
 }

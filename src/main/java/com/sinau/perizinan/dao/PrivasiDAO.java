@@ -6,7 +6,8 @@ import com.sinau.perizinan.model.Privasi;
 
 public interface PrivasiDAO extends GenericRepositoryDAO<Privasi>  {
 
-	public Privasi findByExample(Privasi privasi);
-	public List<Privasi> getAllPrivasi();
+	public List<Privasi> getAllPrivasi(int curentIndex) throws Exception;
+	public Privasi getById(Integer idPrivasi) throws Exception;
+	public int getRowCount() throws Exception;
 
 }
