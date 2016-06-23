@@ -1,0 +1,68 @@
+/* Body User Message
+---------------------------------------- */
+.userMessageTitleSuccess {
+	display: inline-block;
+	color: #204a87;
+	margin-top: 5px;
+	margin-left: 27px;
+	margin-right: 27px;
+	font-size: 1em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.userMessageTitleFailed {
+	display: inline-block;
+	color: #E2144A;
+	margin-top: 5px;
+	margin-left: 27px;
+	margin-right: 27px;
+	font-size: 1em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.userMessage {
+	display: inline-block; 
+	float: left; 
+	width: 98%;
+	border-radius: 3px 3px;
+	height: auto;
+	padding-bottom: 5px;
+    background: #d7e9f5;
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+
+/* Body Footer
+---------------------------------------- */
+.separatorBodyFooterDivider {
+   margin-top: 50px;
+   border-bottom-width: 2px;
+   border-bottom-color: #d7e9f5;
+   border-bottom-style: solid;
+   margin-bottom: 0.5em;
+}
+
+.bodyFooterTitle {
+	color: #204a87;
+	padding: 0 0px;
+	margin: 0 0px;
+	background-color: #fff;
+	font-size: 1em;
+}
+
+.divBodyFooterLeft {
+	width: 50%; 
+	float: left;
+	padding: 0 10px;
+}
+
+.divBodyFooterRight {
+	width: 30%; 
+	float: right;
+	padding: 0 10px;
+}
+

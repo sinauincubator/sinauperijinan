@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name="MASTER_KBLI")
 public class MasterKbli implements Serializable {
@@ -20,7 +22,8 @@ public class MasterKbli implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="KODE_KBLI", unique = true)
+	@Column(name="KODE_KBLI", unique = true, nullable = false)
+	@NotBlank(message = "Kode KBLI tidak boleh kosong.")
 	private String kodeKbli;
 	
 	@Column(name="DESKRIPSI")

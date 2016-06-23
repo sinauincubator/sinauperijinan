@@ -16,6 +16,8 @@ import com.sinau.perizinan.model.MasterKbli;
 
 @Service
 public class MasterKbliServiceImpl extends GenericServiceImpl<MasterKbli> implements MasterKbliService {
+	
+	private final String MASTER_KBLI_NOT_FOUND = "Master KBLI tidak ditemukan."; 
 
 	@Autowired
 	private MasterKbliDAO masterKbliDAO;
@@ -45,6 +47,8 @@ public class MasterKbliServiceImpl extends GenericServiceImpl<MasterKbli> implem
 		
 		if(masterKbliResult != null) {
 			BeanUtils.copyProperties(masterKbliFormResult, masterKbliResult);
+		} else {
+			throw new Exception(MASTER_KBLI_NOT_FOUND);
 		}
 		
 		return masterKbliFormResult;

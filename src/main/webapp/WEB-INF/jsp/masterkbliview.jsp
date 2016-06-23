@@ -6,33 +6,44 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><a href="masterkbliadd.htm">Daftar KBLI Baru</a></h1>
+<h1><a href="${addLink}">Master KBLI</a></h1>
 
-<c:url value="masterkbliview.htm" var="pagedLink"></c:url>
+<tg:usermessage></tg:usermessage>
+
 <div style="width: 98%">
-	<tg:paging pagingRecord="${pagingRecord}" pagedLink="${pagedLink}"/>
+	<tg:paging pagingRecord="${pagingRecord}" />
 </div>
 
-<table style="border: 1px solid; width: 98%; text-align: center;">
-	<thead style="background:#bbbbff; font-weight: bold;">
+<table id="viewtable" style="border: 1px solid; width: 98%; text-align: center;">
+	<thead style="background: #d7e9f5; font-weight: bold;">		
 		<tr>
 			<td>KBLI</td>
 			<td>Deskripsi</td>
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${pagingRecord.records}" var="masterkbli">
-			<c:url var="editUrl" value="masterkbliedit.htm?id=${masterkbli.id}" />
-		<tr>
-			<td><a href="${editUrl}"><c:out value="${masterkbli.kodeKbli}" /></a></td>
-			<td><c:out value="${masterkbli.deskripsi}" /></td>
-		</tr>
-	</c:forEach>
+	<c:choose>
+		<c:when test="${not empty pagingRecord.records}">
+			<c:forEach items="${pagingRecord.records}" var="masterkbli">
+				<tr>
+					<td><a href="${editLink}?id=${masterkbli.id}"><c:out value="${masterkbli.kodeKbli}" /></a></td>
+					<td><c:out value="${masterkbli.deskripsi}" /></td>
+				</tr>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<tr>
+				<td colspan="2">No Records Found.</td>
+			</tr>
+		</c:otherwise>
+	</c:choose>
 	</tbody>
 </table>
 
+<tg:bodyfooter></tg:bodyfooter>
+
 <script>
-	$( "tr:odd" ).css( "background-color", "#f2f2f2" );
+	$("#viewtable > tbody > tr:odd").css("background-color", "#f2f2f2");
 </script>
 
 </body>

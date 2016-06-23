@@ -128,10 +128,10 @@
 			        	</ul>
 			        </li>
 			        <li class="menubar">
-			            <a href="" title="Privasi Pengguna" class="current" >Privasi Pengguna</a>
+			            <a href="" title="Keamanan" class="current" >Keamanan</a>
 			            <ul>
 			            	<li>
-			                	<a href="privasiview.htm" title="Privasi">Privasi</a>
+			                	<a href="privasiview.htm" title="Privasi">Hak Akses</a>
 			            	</li>
 			            	<li>
 			                	<a href="penggunaview.htm" title="Pengguna">Pengguna</a>
@@ -141,9 +141,6 @@
 			            	</li>
 			        	</ul>
 			        </li>
-	                <li>
-	                	<a href="#" title="Logout" class="current" >Logout</a>
-	            	</li>
             	</ul>
 			</div>
             <hr/>

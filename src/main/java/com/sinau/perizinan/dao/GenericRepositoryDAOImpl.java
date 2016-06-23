@@ -18,4 +18,12 @@ public class GenericRepositoryDAOImpl<T> implements GenericRepositoryDAO<T> {
 		sessionFactory.getCurrentSession().update(object);
 	}
 
+	public Long addAndReturnPrimaryKeyAsLong(T object) throws Exception {
+		return (Long) sessionFactory.getCurrentSession().save(object);
+	}
+
+	public Integer addAndReturnPrimaryKeyAsInteger(T object) throws Exception {
+		return (Integer) sessionFactory.getCurrentSession().save(object);
+	}
+
 }

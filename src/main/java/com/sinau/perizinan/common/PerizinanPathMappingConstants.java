@@ -105,6 +105,7 @@ public interface PerizinanPathMappingConstants {
 	String PRIVASI_PENGGUNA_PENGGUNA_EDIT_JSP_PAGE = "penggunaedit";
 
 	// Logout Pages
+	String LOGOUT_REQUEST_MAPPING = "welcome.htm";
 
 	// Login Pages
 

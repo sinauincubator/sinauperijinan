@@ -1,7 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ attribute name="pagingRecord" required="true"
 	type="com.sinau.perizinan.common.PagingRecord"%>
-<%@ attribute name="pagedLink" required="true" type="java.lang.String"%>
+<%@ attribute name="pagedLink" required="false" type="java.lang.String"%>
+
+<c:if test="${not empty viewLink}">
+	<c:set var="pagedLink" value="${viewLink}"/>
+</c:if>
 
 <link href="/sinauperijinan/styles/pagination/pagination.css" rel="stylesheet" type="text/css" />
 
@@ -28,20 +32,19 @@
 		</c:otherwise>
 	</c:choose>
 	<c:forEach var="i" begin="${pagingRecord.beginIndex}" end="${pagingRecord.endIndex}">
-		<c:url var="pageUrl" value="${pagedLink}?page=${i}"/>
 		<c:choose>
 			<c:when test="${i == pageNum}">
 				<span class="pagingItemCurrent"><c:out value="${i}"/></span>
 			</c:when>
 			<c:otherwise>
 				<span class="pagingItem">
-					<a href="${pageUrl}"><c:out value="${i}"/></a>
+					<a href="${pagedLink}?page=${i}"><c:out value="${i}"/></a>
 				</span>
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>
 	<c:choose>
-		<c:when test="${pageNum == pagingRecord.totalPages}">
+		<c:when test="${pagingRecord.totalPages == 0 || pageNum == pagingRecord.totalPages}">
 			<span class="pagingItemCurrent">Next &raquo;</span>
 			<span class="pagingItemCurrent">Last</span>
 		</c:when>

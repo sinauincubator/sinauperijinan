@@ -20,4 +20,14 @@ public class GenericServiceImpl<T> implements GenericService<T> {
 		this.repositoryDAO.update(object);
 	}
 
+	@Transactional
+	public Long addAndReturnPrimaryKeyAsLong(T object) throws Exception {
+		return this.repositoryDAO.addAndReturnPrimaryKeyAsLong(object);
+	}
+
+	@Transactional
+	public Integer addAndReturnPrimaryKeyAsInteger(T object) throws Exception {
+		return this.repositoryDAO.addAndReturnPrimaryKeyAsInteger(object);
+	}
+
 }
