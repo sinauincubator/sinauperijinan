@@ -27,8 +27,12 @@
 			<span class="pagingItemCurrent">&laquo; Previous</span>
 		</c:when>
 		<c:otherwise>
-			<span class="pagingItem"><a href="${firstUrl}">First</a></span>
-			<span class="pagingItem"><a href="${prevUrl}">&laquo; Previous</a></span>
+			<a href="${firstUrl}">
+				<span class="pagingItem">First</span>
+			</a>
+			<a href="${prevUrl}">
+				<span class="pagingItem">&laquo; Previous</span>
+			</a>
 		</c:otherwise>
 	</c:choose>
 	<c:forEach var="i" begin="${pagingRecord.beginIndex}" end="${pagingRecord.endIndex}">
@@ -36,10 +40,10 @@
 			<c:when test="${i == pageNum}">
 				<span class="pagingItemCurrent"><c:out value="${i}"/></span>
 			</c:when>
-			<c:otherwise>
-				<span class="pagingItem">
-					<a href="${pagedLink}?page=${i}"><c:out value="${i}"/></a>
-				</span>
+			<c:otherwise>				
+					<a href="${pagedLink}?page=${i}">
+						<span class="pagingItem"><c:out value="${i}"/></span>
+					</a>				
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>
@@ -49,8 +53,12 @@
 			<span class="pagingItemCurrent">Last</span>
 		</c:when>
 		<c:otherwise>
-			<span class="pagingItem"><a href="${nextUrl}">Next &raquo;</a></span>
-			<span class="pagingItem"><a href="${lastUrl}">Last</a></span>
+			<a href="${nextUrl}">
+				<span class="pagingItem">Next &raquo;</span>
+			</a>
+			<a href="${lastUrl}">
+				<span class="pagingItem">Last</span>
+			</a>
 		</c:otherwise>
 	</c:choose>
 </div>

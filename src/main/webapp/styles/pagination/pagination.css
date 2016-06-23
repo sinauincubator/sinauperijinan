@@ -9,10 +9,11 @@
 .pagingSearchResultTitle {
 	color: #204a87;
 	padding: 0 0px;
-	margin: 0 2px;
+	margin: 0 5px;
 	background-color: #fff;
 	font-size: 1.2em;
 	text-decoration: none;
+	font-weight: bolder;
 }
 
 
@@ -25,20 +26,20 @@
 
 .pagingItem {
 	color: #204a87;
-	margin: 0 2px;
-	padding: 0 3px;
+	padding: 0 5px;
 	background-color: #d7e9f5;
 	border: 1px solid #bababa;
 	font-size: 1em;
+	font-weight: bolder;
 }
 
 .pagingItemCurrent {
-	color: #E2144A;	
-	margin: 0 1px;
-	padding: 0 4px;
+	color: #E2144A;
+	padding: 0 5px;
 	background-color: #fff;
 	border: 1px solid #bfbfbf;
 	font-size: 1em;
+	font-weight: bolder;
 }
 
 .pagingItem a {	
