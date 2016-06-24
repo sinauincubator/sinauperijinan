@@ -1,14 +1,14 @@
 package com.sinau.perizinan.form;
 
 public class PrivasiForm {
-	private String idPrivasi;
+	private Integer idPrivasi;
 	private String roleName;
 
-	public String getIdPrivasi() {
+	public Integer getIdPrivasi() {
 		return idPrivasi;
 	}
-	public void setIdPrivasi(String idPrivasi) {
-		this.idPrivasi = idPrivasi;
+	public void setIdPrivasi(Integer pk) {
+		this.idPrivasi = pk;
 	}
 	public String getRoleName() {
 		return roleName;

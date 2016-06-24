@@ -1,8 +1,6 @@
 package com.sinau.perizinan.controller;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -19,14 +17,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sinau.perizinan.common.PagingRecord;
 import com.sinau.perizinan.common.PerizinanPathMappingConstants;
-import com.sinau.perizinan.form.MasterKbliForm;
+import com.sinau.perizinan.common.ScopeVariableAssigner;
 import com.sinau.perizinan.form.PrivasiForm;
 import com.sinau.perizinan.model.Privasi;
 import com.sinau.perizinan.service.PrivasiService;
 
 
 @Controller
-public class PrivasiController {
+public class PrivasiController extends ScopeVariableAssigner {
+
+	private final String PRIVASI_ADD_SUCCESS_MESSAGE = "Privasi telah berhasil ditambahkan.";
+	private final String PRIVASI_EDIT_SUCCESS_MESSAGE = "Privasi telah berhasil diubah.";
+
 	protected static Logger logger = Logger.getLogger("controller");
 
 	@Autowired
@@ -37,6 +39,8 @@ public class PrivasiController {
     	logger.info("Received request to show all privasi");
 
     	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_VIEW_JSP_PAGE;
+    	String status = StringUtils.EMPTY;
+		String message = StringUtils.EMPTY;
 
     	PagingRecord<PrivasiForm> pageList = null;
 		try {
@@ -45,22 +49,20 @@ public class PrivasiController {
 			}
 			pageList = this.privasiService.getAllPrivasi(currentIndex);
 		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-
-			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-
-			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} catch (Exception e) {
-			e.printStackTrace();
-
-			resultPage = PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} finally {
 			model.addAttribute("pagingRecord", pageList);
+
+			assignPrivasiScopeVariable(model);
+			assignUserMessage(model, status, message);
 		}
-
-
 
     	return resultPage;
 	}
@@ -79,20 +81,30 @@ public class PrivasiController {
 		logger.info("Received request to add new privasi");
 
 		String resulPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_ADD_JSP_PAGE;
+		String status = USER_MESSAGE_STATUS_SUCCESS;
+		String message = PRIVASI_ADD_SUCCESS_MESSAGE;
 
 		Privasi privasi = new Privasi();
 		try{
 			BeanUtils.copyProperties(privasi, privasiForm);
-			this.privasiService.add(privasi);
+			Integer pk = this.privasiService.addAndReturnPrimaryKeyAsInteger(privasi);
+			privasiForm.setIdPrivasi(pk);
+
+			resulPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 		} catch (IllegalAccessException e){
-			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} catch (InvocationTargetException e){
-			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} catch (Exception e) {
-			// TODO ganti not found dengan meaningful message ke use
-			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} finally {
 			model.addAttribute("privasiAttribute", privasiForm);
+
+			assignPrivasiScopeVariable(model);
+			assignUserMessage(model, status, message);
 		}
 
    		return resulPage;
@@ -103,17 +115,21 @@ public class PrivasiController {
     	logger.info("Received request to show edit page");
 
     	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
+    	String status = StringUtils.EMPTY;
+		String message = StringUtils.EMPTY;
 
     	PrivasiForm privasiForm = new PrivasiForm();
     	try{
     		privasiForm = this.privasiService.getById(idPrivasi);
     	} catch (Exception e){
-    		e.printStackTrace();
-
-    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
-    	} finally {
+    		message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
+		} finally {
     		model.addAttribute("privasiAttribute", privasiForm);
-    	}
+
+    		assignPrivasiScopeVariable(model);
+			assignUserMessage(model, status, message);
+		}
 
     	return resultPage;
     }
@@ -123,26 +139,28 @@ public class PrivasiController {
     	logger.info("Received request to update privasi");
 
     	String resultPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
+    	String status = USER_MESSAGE_STATUS_SUCCESS;
+		String message = PRIVASI_EDIT_SUCCESS_MESSAGE;
 
     	Privasi privasi = new Privasi();
     	try {
     		BeanUtils.copyProperties(privasi, privasiForm);
     		this.privasiService.update(privasi);
     	} catch(IllegalAccessException e){
-    		e.printStackTrace();
-
-    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
-    	}catch (InvocationTargetException e){
-    		e.printStackTrace();
-
-    		return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
-    	} catch (Exception e) {
-			e.printStackTrace();
-
-			return PerizinanPathMappingConstants.NOT_FOUND_JSP_PAGE;
+    		message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
+		}catch (InvocationTargetException e){
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
+		} catch (Exception e) {
+			message = e.getMessage();
+			status = USER_MESSAGE_STATUS_FAILED;
 		} finally {
     		model.addAttribute("privasiAttribute", privasiForm);
-    	}
+
+    		assignPrivasiScopeVariable(model);
+			assignUserMessage(model, status, message);
+		}
 
 
     	return resultPage;

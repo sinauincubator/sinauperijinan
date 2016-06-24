@@ -17,6 +17,9 @@ import com.sinau.perizinan.model.Privasi;
 @Service
 public class PrivasiServiceImpl extends GenericServiceImpl<Privasi> implements PrivasiService{
 
+	private final String PRIVASI_NOT_FOUND = "Privasi tidak ditemukan.";
+
+
 	@Autowired
 	private PrivasiDAO privasiDAO;
 
@@ -45,6 +48,8 @@ public class PrivasiServiceImpl extends GenericServiceImpl<Privasi> implements P
 
 		if(privasiResult != null){
 			BeanUtils.copyProperties(privasiFormResult, privasiResult);
+		} else {
+			throw new Exception(PRIVASI_NOT_FOUND);
 		}
 
 		return privasiFormResult;
