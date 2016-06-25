@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name="PRIVASI")
@@ -16,6 +17,10 @@ public class Privasi implements Serializable {
 	
 	@Id
 	@Column(name="ID_PRIVASI")
+	@Min(
+         value = 1,
+         message = "Id privasi harus angka dan tidak boleh 0."
+    )
 	private int idPrivasi;
 
 	@Column(name="ROLE_NAME")

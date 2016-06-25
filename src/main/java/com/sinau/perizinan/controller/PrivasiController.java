@@ -89,7 +89,7 @@ public class PrivasiController extends ScopeVariableAssigner {
 		try{
 			BeanUtils.copyProperties(privasi, privasiForm);
 			Integer pk = this.privasiService.addAndReturnPrimaryKeyAsInteger(privasi);
-			privasiForm.setIdPrivasi(pk);
+			privasiForm.setIdPrivasi(StringUtils.EMPTY + pk);
 
 			resulPage = PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_JSP_PAGE;
 		} catch (IllegalAccessException e){
