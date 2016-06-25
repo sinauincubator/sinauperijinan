@@ -7,8 +7,8 @@ public class PrivasiForm {
 	public Integer getIdPrivasi() {
 		return idPrivasi;
 	}
-	public void setIdPrivasi(Integer pk) {
-		this.idPrivasi = pk;
+	public void setIdPrivasi(Integer idPrivasi) {
+		this.idPrivasi = idPrivasi;
 	}
 	public String getRoleName() {
 		return roleName;
@@ -16,5 +16,4 @@ public class PrivasiForm {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-
 }

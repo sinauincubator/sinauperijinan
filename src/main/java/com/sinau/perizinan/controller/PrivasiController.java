@@ -72,6 +72,7 @@ public class PrivasiController extends ScopeVariableAssigner {
     	logger.info("Received request to show add page");
 
     	model.addAttribute("privasiAttribute", new PrivasiForm());
+    	assignPrivasiScopeVariable(model);
 
     	return PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_ADD_JSP_PAGE;
 	}

@@ -58,7 +58,7 @@
 		<td></td>
 		<td></td>
 		<td>
-			<input id="submit" type="submit" value="Save" />
+			<input id="submit" type="submit" value="Save" style="width: 8em;"/>
 			<script type="text/javascript">
 				Spring.addDecoration(new Spring.ValidateAllDecoration({
 					elementId: "submit",

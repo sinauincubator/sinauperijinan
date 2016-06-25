@@ -59,7 +59,7 @@
 			<td></td>
 			<td></td>
 			<td>
-				<input id="submit" type="submit" value="Edit" style="width: 8em;"/>
+				<input id="submit" type="submit" value="Modify" style="width: 8em;"/>
 				<script type="text/javascript">
 				    Spring.addDecoration(new Spring.ValidateAllDecoration({
 					    elementId: "submit",

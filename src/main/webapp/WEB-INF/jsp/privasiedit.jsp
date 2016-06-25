@@ -58,12 +58,12 @@
 			<td></td>
 			<td></td>
 			<td>
-				<input id="submit" type="submit" value="Save" />
+				<input id="submit" type="submit" value="Modify" style="width: 8em;"/>
 				<script type="text/javascript">
-			    	Spring.addDecoration(new Spring.ValidateAllDecoration({
-			    		elementId: "submit",
-			    		event: "onclick" }));
-			    </script>
+					Spring.addDecoration(new Spring.ValidateAllDecoration({
+						elementId: "submit",
+						event: "onclick" }));
+				</script>
 			</td>
 		</tr>
 	</table>
