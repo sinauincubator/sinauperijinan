@@ -1,0 +1,26 @@
+/* Body Search Criteria
+---------------------------------------- */
+.searchCriteria {
+	display: inline-block; 
+	float: left; 
+	width: 98%;
+	border-radius: 3px 3px;
+	height: auto;
+	padding-bottom: 5px;
+    background: #d7e9f5;
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 30px;
+}
+
+.searchCriteriaField {
+	display: inline-block;
+	color: #000000;
+	margin-top: 15px;
+	margin-left: 27px;
+	margin-right: 27px;
+	font-size: 1.1em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+

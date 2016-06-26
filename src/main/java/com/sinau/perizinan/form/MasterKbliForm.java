@@ -4,6 +4,7 @@ public class MasterKbliForm {
 	private Integer id;
 	private String kodeKbli;
 	private String deskripsi;
+	private String searchMethod;
 	
 	public Integer getId() {
 		return id;
@@ -23,4 +24,11 @@ public class MasterKbliForm {
 	public void setDeskripsi(String deskripsi) {
 		this.deskripsi = deskripsi;
 	}
+	public String getSearchMethod() {
+		return searchMethod;
+	}
+	public void setSearchMethod(String searchMethod) {
+		this.searchMethod = searchMethod;
+	}
+	
 }

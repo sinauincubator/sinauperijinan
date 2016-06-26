@@ -58,6 +58,7 @@ public class MasterKbliController extends ScopeVariableAssigner {
 			status = USER_MESSAGE_STATUS_FAILED;
 		} finally {
 			model.addAttribute("pagingRecord", pageList);
+			model.addAttribute("masterKbliAttribute", new MasterKbliForm());
 			
 			assignMasterKbliScopeVariable(model);
 			assignUserMessage(model, status, message);
