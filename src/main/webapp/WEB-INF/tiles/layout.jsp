@@ -6,7 +6,7 @@
     <head>
     	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	
+
 		<title><tiles:insertAttribute name="title" ignore="true" /></title>
 
         <link rel="stylesheet" type="text/css" media="all" href="/sinauperijinan/styles/simplicity/theme.css" />
@@ -18,7 +18,7 @@
         <script type="text/javascript" src="<c:url value="/resources/dojo/dojo.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/resources/spring/Spring.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/resources/spring/Spring-Dojo.js"/>"></script>
-		
+
 		<script src="/sinauperijinan/scripts/jquery-3.0.0.min.js"></script>
     </head>
 <body class="tundra">
@@ -47,7 +47,7 @@
 	                	<a href="" title="Master" class="current" >Master</a>
 	                    <ul>
 	        		    	<li>
-	                        	<a href="pemohonview.htm" title="Master Pemohon">Master Pemohon</a>
+	                        	<a href="masterpemohonview.htm" title="Master Pemohon">Master Pemohon</a>
 	            			</li>
 	            			<li>
 	                        	<a href="masterizinview.htm" title="Master Izin">Master Izin</a>

@@ -26,18 +26,18 @@
       <put-attribute name="body" value="/WEB-INF/jsp/about.jsp"/>
   </definition>
 
-  <definition name="pemohonview" extends="baselayout">
+  <definition name="masterpemohonview" extends="baselayout">
       <put-attribute name="title" value="Data Pemohon"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonview.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/masterpemohonview.jsp"/>
   </definition>
 
-  <definition name="pemohonadd" extends="baselayout">
+  <definition name="masterpemohonadd" extends="baselayout">
       <put-attribute name="title" value="Buat Pemohon Baru"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonadd.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/masterpemohonadd.jsp"/>
   </definition>
-  <definition name="pemohonedit" extends="baselayout">
+  <definition name="masterpemohonedit" extends="baselayout">
       <put-attribute name="title" value="Ubah Data Pemohon"/>
-      <put-attribute name="body" value="/WEB-INF/jsp/pemohonedit.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/jsp/masterpemohonedit.jsp"/>
   </definition>
 
   <definition name="masterizinview" extends="baselayout">

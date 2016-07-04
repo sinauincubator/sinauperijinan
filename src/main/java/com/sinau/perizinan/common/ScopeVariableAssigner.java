@@ -29,7 +29,14 @@ public class ScopeVariableAssigner {
 		model.addAttribute(EDIT_LINK, PerizinanPathMappingConstants.PRIVASI_PENGGUNA_PRIVASI_EDIT_REQUEST_MAPPING);
 		model.addAttribute(LOGOUT_LINK, PerizinanPathMappingConstants.LOGOUT_REQUEST_MAPPING);
 	}
-	
+
+	protected void assignMasterPemohonScopeVariable(Model model) {
+		model.addAttribute(VIEW_LINK, PerizinanPathMappingConstants.MASTER_PEMOHON_VIEW_REQUEST_MAPPING);
+		model.addAttribute(ADD_LINK, PerizinanPathMappingConstants.MASTER_PEMOHON_ADD_REQUEST_MAPPING);
+		model.addAttribute(EDIT_LINK, PerizinanPathMappingConstants.MASTER_PEMOHON_EDIT_REQUEST_MAPPING);
+		model.addAttribute(LOGOUT_LINK, PerizinanPathMappingConstants.LOGOUT_REQUEST_MAPPING);
+	}
+
 	// Gunakan method ini secara global, tidak perlu membuat lagi
 	protected void assignUserMessage(Model model, String status, String message) {
 		model.addAttribute(USER_MESSAGE_STATUS, status != null ? status : "");

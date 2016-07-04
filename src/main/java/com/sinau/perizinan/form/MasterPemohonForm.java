@@ -8,7 +8,7 @@ public class MasterPemohonForm {
 	private String alamatWakil;
 	private String jenisPemohon;
 	//detail pemohon
-	private String idPemohon;
+	private Integer idPemohon;
 	private String namaPemohon;
 	private String jenisKelamin;
 	private String tempatLahir;
@@ -86,10 +86,10 @@ public class MasterPemohonForm {
 	}
 
 	//setter getter detail pemohon
-	public String getIdPemohon() {
+	public Integer getIdPemohon() {
 		return idPemohon;
 	}
-	public void setIdPemohon(String idPemohon) {
+	public void setIdPemohon(Integer idPemohon) {
 		this.idPemohon = idPemohon;
 	}public String getNamaPemohon() {
 		return namaPemohon;

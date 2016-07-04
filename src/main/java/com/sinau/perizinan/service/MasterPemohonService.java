@@ -1,12 +1,14 @@
 package com.sinau.perizinan.service;
 
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
+import com.sinau.perizinan.common.PagingRecord;
+import com.sinau.perizinan.form.MasterPemohonForm;
 import com.sinau.perizinan.model.MasterPemohon;
 
-public interface MasterPemohonService {
+public interface MasterPemohonService extends GenericService<MasterPemohon>{
 
-	public void addPemohon(MasterPemohon pemohon);
-	public void updatePemohon(MasterPemohon pemohon);
-	public List<MasterPemohon> listPemohons();
+	public PagingRecord<MasterPemohonForm> getAllMasterPemohon(int currentIndex) throws IllegalAccessException, InvocationTargetException, Exception;
+	public MasterPemohonForm getById(Integer id) throws Exception;
+
 }

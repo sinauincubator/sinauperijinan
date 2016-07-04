@@ -17,7 +17,7 @@ public class MasterPemohon implements Serializable {
 	@Id
 	@Column(name="ID_PEMOHON")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idPemohon;
+	private Integer idPemohon;
 
 	// detail yang mendaftarkan
 	@Column(name="NAMA_WAKIL")
@@ -40,7 +40,7 @@ public class MasterPemohon implements Serializable {
 	@Column(name="JENIS_KELAMIN")
 	private String jenisKelamin;
 
-	@Column(name="TEMAPT_LAHIR")
+	@Column(name="TEMPAT_LAHIR")
 	private String tempatLahir;
 
 	@Column(name="TANGGAL_LAHIR")
@@ -50,13 +50,13 @@ public class MasterPemohon implements Serializable {
 	private String npwp;
 
 	@Column(name="NO_KTP_PEMOHON")
-	private int noKtpPemohon;
+	private String noKtpPemohon;
 
 	@Column(name="JENIS_IDENTITAS_LAIN")
 	private String jenisIdentitasLain;
 
 	@Column(name="NO_IDENTITAS")
-	private int noIdentitas;
+	private String noIdentitas;
 
 	@Column(name="NO_HP")
 	private String noHp;
@@ -172,11 +172,11 @@ public class MasterPemohon implements Serializable {
 	@Column(name="ALAMAT_PENGURUS")
 	private String alamatPengurus;
 
-	public int getIdPemohon() {
+	public Integer getIdPemohon() {
 		return idPemohon;
 	}
 
-	public void setIdPemohon(int idPemohon) {
+	public void setIdPemohon(Integer idPemohon) {
 		this.idPemohon = idPemohon;
 	}
 
@@ -252,11 +252,11 @@ public class MasterPemohon implements Serializable {
 		this.npwp = npwp;
 	}
 
-	public int getNoKtpPemohon() {
+	public String getNoKtpPemohon() {
 		return noKtpPemohon;
 	}
 
-	public void setNoKtpPemohon(int noKtpPemohon) {
+	public void setNoKtpPemohon(String noKtpPemohon) {
 		this.noKtpPemohon = noKtpPemohon;
 	}
 
@@ -268,11 +268,11 @@ public class MasterPemohon implements Serializable {
 		this.jenisIdentitasLain = jenisIdentitasLain;
 	}
 
-	public int getNoIdentitas() {
+	public String getNoIdentitas() {
 		return noIdentitas;
 	}
 
-	public void setNoIdentitas(int noIdentitas) {
+	public void setNoIdentitas(String noIdentitas) {
 		this.noIdentitas = noIdentitas;
 	}
 
@@ -570,10 +570,6 @@ public class MasterPemohon implements Serializable {
 
 	public void setAlamatPengurus(String alamatPengurus) {
 		this.alamatPengurus = alamatPengurus;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 

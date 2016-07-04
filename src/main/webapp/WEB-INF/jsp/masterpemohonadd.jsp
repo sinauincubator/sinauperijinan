@@ -1,17 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
-<head>
-	<title>Insert title here</title>
-</head>
+    <head>
+        <title>Insert title here</title>
+    </head>
 <body>
 
-<h1>Edit Pemohon</h1>
+<h1>Tambah Master Pemohon</h1>
 
-<c:url var="saveUrl" value="pemohonedit.htm" />
-<form:form modelAttribute="pemohonAttribute" method="POST" action="${saveUrl}">
-	<table style="width: 100%">
+<tg:usermessage></tg:usermessage>
+
+<c:url var="saveUrl" value="${addLink}" />
+<form:form modelAttribute="masterPemohonAttribute" method="POST" action="${saveUrl}">
+	<table style="width: 90%; margin-left: 3em;">
 		<tr>
 			<td colspan="3" rowspan="3"><b>Detail Pemohon</b></td>
 		</tr>
@@ -22,9 +25,9 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td width="20%"><form:label path="nama">Nama</form:label></td>
-			<td width="2%">:</td>
-			<td width="78%">
+			<td width="5%"><form:label path="nama">Nama</form:label></td>
+			<td width="1%">:</td>
+			<td width="75%">
 				<form:input path="nama" cssStyle="width:75%"/>
 				<script type="text/javascript">
 				Spring.addDecoration(new Spring.ElementDecoration({
@@ -174,6 +177,7 @@
 				</script>
 			</td>
 		</tr>
+
 		<tr>
 			<td><form:label path="noKtpPemohon">No KTP</form:label></td>
 			<td>:</td>
@@ -773,27 +777,27 @@
 				</script>
 			</td>
 		</tr>
-	</table>
-	<h2>Detail Pengurus Perusahaan</h2>
-	<table style="border: 1px solid; width: 98%">
-	<thead style="background:#EBDEF0">
 		<tr>
-			<th>Nama</th>
-			<th>Jabatan</th>
-			<th>Jenis Kelamin</th>
-			<th>Phone No</th>
-			<th>Alamat</th>
-			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
-	</thead>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>
+				<input id="submit" type="submit" value="Save" style="width: 8em;"/>
+				<script type="text/javascript">
+				    Spring.addDecoration(new Spring.ValidateAllDecoration({
+					    elementId: "submit",
+					    event: "onclick" }));
+				</script>
+			</td>
+		</tr>
 	</table>
-
-	<input id="submit" type="submit" value="Save" />
-	<script type="text/javascript">
-	    Spring.addDecoration(new Spring.ValidateAllDecoration({
-		    elementId: "submit",
-		    event: "onclick" }));
-	</script>
 </form:form>
+
+<tg:bodyfooter></tg:bodyfooter>
+
 </body>
 </html>

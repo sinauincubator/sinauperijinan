@@ -11,12 +11,12 @@ public interface PerizinanPathMappingConstants {
 	String NOT_FOUND_JSP_PAGE = "notfound";
 
 	// Master Pages
-	String MASTER_PEMOHON_VIEW_REQUEST_MAPPING = "pemohonview.htm";
-	String MASTER_PEMOHON_VIEW_JSP_PAGE = "pemohonview";
-	String MASTER_PEMOHON_ADD_REQUEST_MAPPING = "pemohonadd.htm";
-	String MASTER_PEMOHON_ADD_JSP_PAGE = "pemohonadd";
-	String MASTER_PEMOHON_EDIT_REQUEST_MAPPING = "pemohonedit.htm";
-	String MASTER_PEMOHON_EDIT_JSP_PAGE = "pemohonedit";
+	String MASTER_PEMOHON_VIEW_REQUEST_MAPPING = "masterpemohonview.htm";
+	String MASTER_PEMOHON_VIEW_JSP_PAGE = "masterpemohonview";
+	String MASTER_PEMOHON_ADD_REQUEST_MAPPING = "masterpemohonadd.htm";
+	String MASTER_PEMOHON_ADD_JSP_PAGE = "masterpemohonadd";
+	String MASTER_PEMOHON_EDIT_REQUEST_MAPPING = "masterpemohonedit.htm";
+	String MASTER_PEMOHON_EDIT_JSP_PAGE = "masterpemohonedit";
 
 	String MASTER_IZIN_VIEW_REQUEST_MAPPING = "masterizinview.htm";
 	String MASTER_IZIN_VIEW_JSP_PAGE = "masterizinview";
