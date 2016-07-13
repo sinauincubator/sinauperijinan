@@ -38,6 +38,7 @@
 				<value>com.sinau.perizinan.model.MasterKbli</value>
 				<value>com.sinau.perizinan.model.Privasi</value>
 				<value>com.sinau.perizinan.model.MasterPemohon</value>
+				<value>com.sinau.perizinan.model.MasterIzin</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -45,7 +46,7 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.use_sql_comments">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>

@@ -1,14 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
 <head>
 <title>Insert title here</title>
 </head>
 <body>
-<h1><a href="masterizinadd.htm">Daftar Izin Baru</a></h1>
+<h1><a href="${addLink}">Daftar Izin Baru</a></h1>
 
-<table style="border: 1px solid; width: 98%">
-	<thead style="background:#EBDEF0">
+<tg:usermessage></tg:usermessage>
+
+<div style="width: 98%">
+	<tg:paging pagingRecord="${pagingRecord}" />
+</div>
+
+<table id="viewtable" style="border: 1px solid; width: 98%; text-align: center;">
+	<thead style="background: #d7e9f5; font-weight: bold;">
 		<tr>
 			<th>Kode Izin</th>
 			<th>Jenis</th>
@@ -17,52 +24,39 @@
 			<th>Peraturan</th>
 			<th>KPI</th>
 			<th>Aktif</th>
-			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${masterizins}" var="masterizin">
-			<c:url var="editUrl" value="masterizinedit.htm?kodeIzin=${masterizin.kodeIzin}" />
-		<tr>
-			<td><c:out value="${masterizin.kodeIzin}" /></td>
-			<td><c:out value="${masterizin.jenis}" /></td>
-			<td><c:out value="${masterizin.izin}" /></td>
-			<td><c:out value="${masterizin.dasar}" /></td>
-			<td><c:out value="${masterizin.peraturan}" /></td>
-			<td><c:out value="${masterizin.kpi}" /></td>
-			<td><c:out value="${masterizin.aktif}" /></td>
-			<td><a href="${editUrl}">Edit</a></td>
-		</tr>
-	</c:forEach>
+	<c:choose>
+		<c:when test="${not empty pagingRecord.records}">
+		<c:forEach items="${pagingRecord.records}" var="masterizin">
+				<tr>
+					<td><a href="${editLink}?kodeIzin=${masterizin.kodeIzin}"><c:out value="${masterizin.kodeIzin}" /></a></td>
+					<td><c:out value="${masterizin.jenis}" /></td>
+					<td><c:out value="${masterizin.izin}" /></td>
+					<td><c:out value="${masterizin.dasar}" /></td>
+					<td><c:out value="${masterizin.peraturan}" /></td>
+					<td><c:out value="${masterizin.kpi}" /></td>
+					<td><c:out value="${masterizin.aktif}" /></td>
+				</tr>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<tr>
+				<td colspan="2">No Records Found.</td>
+			</tr>
+		</c:otherwise>
+	</c:choose>
 	</tbody>
-
 </table>
 
-<h1><a href="masterizinadd.htm">Tambah Syarat-Syarat</a></h1>
+<tg:bodyfooter></tg:bodyfooter>
 
-<table style="border: 1px solid; width: 98%">
-<thead style="background:#EBDEF0">
-	<tr>
-		<th>Kode Izin</th>
-		<th>Kode Syarat</th>
-		<th>Syarat</th>
-		<th>Aktif</th>
-		<th></th>
-	</tr>
-</thead>
-<tbody>
-<c:forEach items="${masterizins}" var="masterizin">
-		<c:url var="editUrl" value="masterizinedit.htm?kodeIzin=${masterizin.kodeIzin}" />
-	<tr>
-		<td><c:out value="${masterizin.kodeIzinSyarat}" /></td>
-		<td><c:out value="${masterizin.kodeSyarat}" /></td>
-		<td><c:out value="${masterizin.syarat}" /></td>
-		<td><c:out value="${masterizin.aktifSyarat}" /></td>
-		<td><a href="${editUrl}">Edit</a></td>
-	</tr>
-</c:forEach>
+<script>
+	$("#viewtable > tbody > tr:odd").css("background-color", "#f2f2f2");
+</script>
+
 </tbody>
 
-</table>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
     <head>
@@ -9,13 +10,15 @@
 
 <h1>Tambah Izin</h1>
 
-<c:url var="saveUrl" value="masterizinadd.htm" />
+<tg:usermessage></tg:usermessage>
+
+<c:url var="saveUrl" value="${addLink}" />
 <form:form modelAttribute="masterIzinAttribute" method="POST" action="${saveUrl}">
-	<table style="width: 100%">
+	<table style="width: 90%; margin-left: 3em;">
 		<tr>
-			<td width="10%"><form:label path="kodeIzin">Kode Izin</form:label></td>
-			<td width="2%">:</td>
-			<td width="88%">
+			<td width="5%"><form:label path="kodeIzin">Kode Izin</form:label></td>
+			<td width="1%">:</td>
+			<td width="75%">
 				<form:input path="kodeIzin" cssStyle="width:75%"/>
 				<script type="text/javascript">
 				Spring.addDecoration(new Spring.ElementDecoration({
@@ -131,87 +134,27 @@
 				</script>
 			</td>
 			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>
+					<input id="submit" type="submit" value="Save" style="width: 8em;"/>
+					<script type="text/javascript">
+					    Spring.addDecoration(new Spring.ValidateAllDecoration({
+						    elementId: "submit",
+						    event: "onclick" }));
+					</script>
+				</td>
+			</tr>
 	</table>
+</form:form>
 
-	<h2>Tambah Syarat-Syarat</h2>
+<tg:bodyfooter></tg:bodyfooter>
 
-	<table style="width: 100%">
-	<tr>
-		<td width="10%"><form:label path="kodeIzinSyarat">Kode Izin</form:label></td>
-		<td width="2%">:</td>
-		<td width="88%">
-			<form:input path="kodeIzinSyarat" cssStyle="width:75%"/>
-			<script type="text/javascript">
-			Spring.addDecoration(new Spring.ElementDecoration({
-				elementId : "kodeIzinSyarat",
-				widgetType : "dijit.form.ValidationTextBox",
-				widgetAttrs : {
-					trim : true,
-					required : true
-				}
-			}));
-			</script>
-		</td>
-	</tr>
-	<tr>
-		<td><form:label path="kodeSyarat">Kode Syarat</form:label></td>
-		<td>:</td>
-		<td>
-			<form:input path="kodeSyarat" cssStyle="width:75%"/>
-			<script type="text/javascript">
-			Spring.addDecoration(new Spring.ElementDecoration({
-				elementId : "kodeSyarat",
-				widgetType : "dijit.form.ValidationTextBox",
-				widgetAttrs : {
-					trim : true,
-					required : true
-				}
-			}));
-			</script>
-		</td>
-	</tr>
-	<tr>
-		<td><form:label path="syarat">Syarat</form:label></td>
-		<td>:</td>
-		<td>
-			<form:input path="syarat" cssStyle="width:75%"/>
-			<script type="text/javascript">
-			Spring.addDecoration(new Spring.ElementDecoration({
-				elementId : "syarat",
-				widgetType : "dijit.form.ValidationTextBox",
-				widgetAttrs : {
-					trim : true,
-					required : true
-				}
-			}));
-			</script>
-		</td>
-	</tr>
-	<tr>
-		<td><form:label path="aktifSyarat">Aktif</form:label></td>
-		<td>:</td>
-		<td>
-			<form:input path="aktifSyarat" cssStyle="width:75%"/>
-			<script type="text/javascript">
-			Spring.addDecoration(new Spring.ElementDecoration({
-				elementId : "aktifSyarat",
-				widgetType : "dijit.form.ValidationTextBox",
-				widgetAttrs : {
-					trim : true,
-					required : true
-				}
-			}));
-			</script>
-		</td>
-	</tr>
-</table>
-
-	<input id="submit" type="submit" value="Save" />
-	<script type="text/javascript">
-	    Spring.addDecoration(new Spring.ValidateAllDecoration({
-		    elementId: "submit",
-		    event: "onclick" }));
-	</script>
-	</form:form>
 </body>
 </html>

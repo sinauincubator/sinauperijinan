@@ -12,9 +12,9 @@ import javax.validation.constraints.Min;
 @Entity
 @Table(name="PRIVASI")
 public class Privasi implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@Column(name="ID_PRIVASI")
 	@Min(
