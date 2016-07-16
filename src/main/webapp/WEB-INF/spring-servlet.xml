@@ -39,6 +39,7 @@
 				<value>com.sinau.perizinan.model.Privasi</value>
 				<value>com.sinau.perizinan.model.MasterPemohon</value>
 				<value>com.sinau.perizinan.model.MasterIzin</value>
+				<value>com.sinau.perizinan.model.Monitoring</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

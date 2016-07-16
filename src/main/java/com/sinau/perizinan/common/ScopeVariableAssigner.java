@@ -43,6 +43,12 @@ public class ScopeVariableAssigner {
 		model.addAttribute(EDIT_LINK, PerizinanPathMappingConstants.MASTER_IZIN_EDIT_REQUEST_MAPPING);
 		model.addAttribute(LOGOUT_LINK, PerizinanPathMappingConstants.LOGOUT_REQUEST_MAPPING);
 	}
+	protected void assignMonitoringScopeVariable(Model model) {
+		model.addAttribute(VIEW_LINK, PerizinanPathMappingConstants.LAPORAN_MONITORING_VIEW_REQUEST_MAPPING);
+		model.addAttribute(ADD_LINK, PerizinanPathMappingConstants.LAPORAN_MONITORING_ADD_REQUEST_MAPPING);
+		model.addAttribute(EDIT_LINK, PerizinanPathMappingConstants.LAPORAN_MONITORING_EDIT_REQUEST_MAPPING);
+		model.addAttribute(LOGOUT_LINK, PerizinanPathMappingConstants.LOGOUT_REQUEST_MAPPING);
+	}
 
 	// Gunakan method ini secara global, tidak perlu membuat lagi
 	protected void assignUserMessage(Model model, String status, String message) {

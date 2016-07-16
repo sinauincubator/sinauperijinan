@@ -1,39 +1,59 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <html>
 <head>
-<title>Insert Title Here</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1><a href="monitoringadd.htm">Tambah Monitoring Baru</a></h1>
+<h1><a href="${addLink}">Tambah Monitoring</a></h1>
 
-<table style="border: 1px solid; width: 98%">
-	<thead style="background:#EBDEF0">
+<tg:usermessage></tg:usermessage>
+
+<div style="width: 98%">
+	<tg:paging pagingRecord="${pagingRecord}" />
+</div>
+
+<table id="viewtable" style="border: 1px solid; width: 98%; text-align: center;">
+	<thead style="background:#d7e9f5; font-weight: bold;">
 		<tr>
-            <th>Pengesahan</th>
-            <th>No Permintaan</th>
-            <th>Kode Izin</th>
-            <th>Jenis</th>
-            <th>Nomor Izin</th>
-            <th>Aging(Hari)</th>
-			<th></th>
+            <td>Pengesahan</td>
+            <td>No Permintaan</td>
+            <td>Kode Izin</td>
+            <td>Jenis</td>
+            <td>Nomor Izin</td>
+            <td>Aging(Hari)</td>
+			<td></td>
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${monitorings}" var="monitoring">
-			<c:url var="editUrl" value="monitoringedit.htm?noPermintaan=${monitoring.noPermintaan}" />
-		<tr>
-			<td><c:out value="${monitoring.pengesahan}" /></td>
-			<td><c:out value="${monitoring.noPermintaan}" /></td>
-			<td><c:out value="${monitoring.kodeIzin}" /></td>
-			<td><c:out value="${monitoring.jenis}" /></td>
-			<td><c:out value="${monitoring.nomorIzin}" /></td>
-			<td><c:out value="${monitoring.aging}" /></td>
-
-			<td><a href="${editUrl}">Edit</a></td>
-		</tr>
-	</c:forEach>
+	<c:choose>
+		<c:when test="${not empty pagingRecord.records}">
+			<c:forEach items="${pagingRecord.records}" var="monitoring">
+				<tr>
+				<td><a href="${editLink}?id=${monitoring.id}"><c:out value="${monitoring.pengesahan}" /></a></td>
+				<td><c:out value="${monitoring.noPermintaan}" /></td>
+				<td><c:out value="${monitoring.kodeIzin}" /></td>
+				<td><c:out value="${monitoring.jenis}" /></td>
+				<td><c:out value="${monitoring.nomorIzin}" /></td>
+				<td><c:out value="${monitoring.aging}" /></td>
+				</tr>
+		</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<tr>
+				<td colspan="2">No Records Found.</td>
+			</tr>
+		</c:otherwise>
+	</c:choose>
 	</tbody>
 </table>
+
+<tg:bodyfooter></tg:bodyfooter>
+
+<script>
+	$("#viewtable > tbody > tr:odd").css("background-color", "#f2f2f2");
+</script>
+
 </body>
 </html>
